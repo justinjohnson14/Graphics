@@ -233,8 +233,6 @@ CMakeFiles/app.dir/app.cpp.o
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_mat4x2.inl
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_mat4x3.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_mat4x3.inl
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_mat4x4.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_mat4x4.inl
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/setup.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/scalar_int_sized.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/scalar_uint_sized.hpp
@@ -272,7 +270,6 @@ CMakeFiles/app.dir/app.cpp.o
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_float4x2_precision.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_float4x3.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_float4x3_precision.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_float4x4.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_float4x4_precision.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/vector_bool2.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/vector_bool2_precision.hpp
@@ -312,6 +309,7 @@ CMakeFiles/app.dir/app.cpp.o
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/compute_common.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_common.inl
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_exponential.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_matrix.inl
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/setup.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec1.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec1.inl
@@ -320,23 +318,6 @@ CMakeFiles/app.dir/app.cpp.o
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec4.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec4.inl
  /home/justin/Documents/graphics/_deps/glm-src/glm/exponential.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/_vectorize.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/compute_vector_decl.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/compute_vector_relational.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_geometric.inl
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_matrix.inl
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_trigonometric.inl
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/qualifier.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/setup.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec3.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec3.inl
- /home/justin/Documents/graphics/_deps/glm-src/glm/simd/platform.h
- /home/justin/Documents/graphics/_deps/glm-src/glm/detail/setup.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/ext/scalar_constants.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/ext/scalar_constants.inl
- /home/justin/Documents/graphics/_deps/glm-src/glm/geometric.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/gtc/constants.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/gtc/constants.inl
  /home/justin/Documents/graphics/_deps/glm-src/glm/mat2x2.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/mat2x3.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/mat2x4.hpp
@@ -347,12 +328,31 @@ CMakeFiles/app.dir/app.cpp.o
  /home/justin/Documents/graphics/_deps/glm-src/glm/mat4x3.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/mat4x4.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/matrix.hpp
- /home/justin/Documents/graphics/_deps/glm-src/glm/trigonometric.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/vec2.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/vec3.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/vec4.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/_vectorize.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/compute_vector_decl.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/compute_vector_relational.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_geometric.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/func_trigonometric.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/qualifier.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/setup.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_mat4x4.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_mat4x4.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec3.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/type_vec3.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/simd/platform.h
+ /home/justin/Documents/graphics/_deps/glm-src/glm/detail/setup.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/ext/scalar_constants.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/ext/scalar_constants.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/geometric.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/gtc/constants.hpp
+ /home/justin/Documents/graphics/_deps/glm-src/glm/gtc/constants.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/trigonometric.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_clip_space.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_clip_space.inl
+ /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_float4x4.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_transform.hpp
  /home/justin/Documents/graphics/_deps/glm-src/glm/ext/matrix_transform.inl
  /home/justin/Documents/graphics/_deps/glm-src/glm/fwd.hpp
