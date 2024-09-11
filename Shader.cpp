@@ -1,48 +1,48 @@
-#include <glad/glad.h>
-#include <sstream>
-#include <string>
-#include <fstream>
-#include <iostream>
-
 #include "Shader.h"
+#include <string>
 
 Shader::Shader(std::string vs, std::string fs)
 {
-    this->setShader(GL_VERTEX_SHADER, vs);
-    this->setShader(GL_FRAGMENT_SHADER, fs);
+    setShader(GL_VERTEX_SHADER, vs);
+    setShader(GL_FRAGMENT_SHADER, fs);
 }
 
-unsigned int Shader::setShader(const GLuint& type, const std::string& file)
+void Shader::setShader(const GLuint& type, const std::string& file)
 {
-
-    switch (type) {
-        case GL_VERTEX_SHADER:
-            m_vertexSrc = read(file).c_str();
-            m_vertexID = glCreateShader(type);
-            glShaderSource(m_vertexID, 1, &m_vertexSrc, NULL);
-            glCompileShader(m_vertexID);
-        case GL_FRAGMENT_SHADER:
-            m_fragmentSrc = read(file).c_str();
-            m_fragmentID = glCreateShader(GL_FRAGMENT_SHADER);
-            glShaderSource(m_fragmentID, 1, &m_fragmentSrc, NULL);
-            glCompileShader(m_fragmentID);
-    }
+    std::string* src = new std::string(read(file));
+    const char* c_src= src->c_str();
+    unsigned int shader = glCreateShader(type);
+    glShaderSource(shader, 1, &c_src, NULL);
+    glCompileShader(shader);
 
     GLint succsess;
-    glGetShaderiv(m_vertexID, GL_COMPILE_STATUS, &succsess);
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &succsess);
     if(!succsess)
     {
         char infoLog[512];
-        glGetShaderInfoLog(m_vertexID, 512, NULL, infoLog);
+        glGetShaderInfoLog(shader, 512, NULL, infoLog);
         fprintf(stderr, "Shader compilation error: \n%s\n", infoLog);
-        glDeleteShader(m_vertexID);
-        return -1;
+        glDeleteShader(shader);
+        return;
     }
 
-    return 0;
+    switch (type) 
+    {
+    case GL_VERTEX_SHADER:
+        m_vertexID = shader;
+    case GL_TESS_CONTROL_SHADER:
+        m_tesselationID = shader;
+    case GL_GEOMETRY_SHADER:
+        m_geometryID = shader;
+    case GL_FRAGMENT_SHADER:
+        m_fragmentID = shader;
+    case GL_COMPUTE_SHADER:
+        m_computeID = shader;
+    }
+    return;
 }
 
-const std::string Shader::read(const std::string& src)
+std::string Shader::read(const std::string& src)
 {
     std::ifstream file(src);
 
@@ -56,6 +56,7 @@ const std::string Shader::read(const std::string& src)
     // Read the file line by line into a string
     std::stringstream buffer;
     buffer << file.rdbuf();
+    //std::cout << buffer.str() << std::endl;
 
     // Close the file
     file.close();
@@ -63,12 +64,14 @@ const std::string Shader::read(const std::string& src)
     return buffer.str();
 }
 
-unsigned int Shader::compile()
+void Shader::compile()
 {
     ID = glCreateProgram();
+    glUseProgram(ID);
     glAttachShader(ID, m_vertexID);
     glAttachShader(ID, m_fragmentID);
     glLinkProgram(ID);
+    return;
 }
 
 void Shader::use()

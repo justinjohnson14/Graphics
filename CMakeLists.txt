@@ -12,7 +12,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(imgui-glfw-glad-glm)
 
-add_executable(app app.cpp glad/src/glad.c)
+add_executable(app app.cpp Shader.cpp glad/src/glad.c)
 
 target_link_libraries(
     app

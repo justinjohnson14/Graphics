@@ -265,6 +265,30 @@ glm/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/glm-build/glm/CMakeFiles/glm.dir/build.make _deps/glm-build/glm/CMakeFiles/glm.dir/build
 .PHONY : glm/fast
 
+Shader.o: Shader.cpp.o
+.PHONY : Shader.o
+
+# target to build an object file
+Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Shader.cpp.o
+.PHONY : Shader.cpp.o
+
+Shader.i: Shader.cpp.i
+.PHONY : Shader.i
+
+# target to preprocess a source file
+Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Shader.cpp.i
+.PHONY : Shader.cpp.i
+
+Shader.s: Shader.cpp.s
+.PHONY : Shader.s
+
+# target to generate assembly for a file
+Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Shader.cpp.s
+.PHONY : Shader.cpp.s
+
 app.o: app.cpp.o
 .PHONY : app.o
 
@@ -333,6 +357,9 @@ help:
 	@echo "... glfw"
 	@echo "... glm"
 	@echo "... imgui"
+	@echo "... Shader.o"
+	@echo "... Shader.i"
+	@echo "... Shader.s"
 	@echo "... app.o"
 	@echo "... app.i"
 	@echo "... app.s"

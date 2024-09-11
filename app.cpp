@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <Shader.h>
+#include "Shader.h"
 
 struct circleData {
     unsigned int VBO;
@@ -57,22 +57,11 @@ int main(void)
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     gladLoadGL();
 
-    Shader shader1 = Shader("./res/vertex.glsl", "./res/fragment.glsl");
+    Shader* shader1 = new Shader("./res/vertex.glsl", "./res/fragment.glsl");
+    shader1->compile();
     struct circleData circle = createCircle();
 
-    //glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(10.0f, 10.0f, 0.0f));
-    //glm::mat4 view = glm::mat4(1.0f);
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH/(float)SCR_HEIGHT, 0.1f, 100.0f);
-
-    glUseProgram(shader1);
-
-    //unsigned int modelLoc = glGetUniformLocation(shader1, "model");
-    //unsigned int viewLoc = glGetUniformLocation(shader1, "view");
-    unsigned int projLoc = glGetUniformLocation(shader1, "projection");
-
-    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-    //glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+    shader1->use();
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -84,7 +73,7 @@ int main(void)
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUseProgram(shader1);
+        shader1->use();
 
         glBindVertexArray(circle.VAO);
         glDrawElements(GL_TRIANGLES, circle.count, GL_UNSIGNED_INT, 0);
@@ -95,7 +84,7 @@ int main(void)
 
     glDeleteVertexArrays(1, &circle.VAO);
     glDeleteBuffers(2, &circle.VBO);
-    glDeleteProgram(shader1);
+    glDeleteProgram(shader1->ID);
 
     glfwTerminate();
     return 0;
