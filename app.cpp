@@ -1,20 +1,15 @@
-#include <glm/ext/matrix_clip_space.hpp>
-#include <glm/ext/matrix_float4x4.hpp>
-#include <glm/ext/matrix_transform.hpp>
-#include <glm/ext/vector_float3.hpp>
-#include <glm/trigonometric.hpp>
-#include <math.h>
 #define GLAD_GL_IMPLEMENTATION
 #include <glad/glad.h>
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
 #include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <chrono>
+#include <math.h>
 
 #include "Shader.h"
 #include "Renderer.h"
@@ -30,7 +25,8 @@ void framebuffer_size_callback(GLFWwindow*, int, int);
 void processInput(GLFWwindow*);
 unsigned int shader(const char*, const char*);
 const char* readFile(const char*);
-struct circleData createCircle();
+double getCurrentTime();
+void update();
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -66,8 +62,6 @@ int main(void)
     Shader* shader1 = new Shader("./res/vertex.glsl", "./res/fragment.glsl");
     shader1->compile();
 
-    struct circleData circle = createCircle();
-
     shader1->use();
 
     glm::mat4 model = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
@@ -93,7 +87,7 @@ int main(void)
     
     while (!glfwWindowShouldClose(window))
     {
-        double current = getCurrentTime()
+        double current = getCurrentTime();
         double elapsed = current - previous;
         previous = current;
         lag += elapsed;
@@ -111,9 +105,6 @@ int main(void)
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
-    glDeleteVertexArrays(1, &circle.VAO);
-    glDeleteBuffers(2, &circle.VBO);
     glDeleteProgram(shader1->ID);
 
     glfwTerminate();
@@ -140,5 +131,10 @@ double getCurrentTime()
 {
     auto now = std::chrono::system_clock::now();
     auto duration = now.time_since_epoch();
-    return chrono::duration_cast<chrono::milliseconds>(duration).count();
+    return std::chrono::duration_cast<std::chrono::milliseconds>(duration).count();
+}
+
+void update()
+{
+    return;
 }
