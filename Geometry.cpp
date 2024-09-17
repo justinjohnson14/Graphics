@@ -4,6 +4,8 @@
 
 #include <glm/glm.hpp>
 
+#include "Renderer.h"
+
 class Geometry {
 public:
     void generateCircle(float, float, float);
@@ -115,10 +117,6 @@ void Geometry::generateCircle(float center_x, float center_y, float radius)
         index[i*3] = 0;
         index[(i*3)+1] = i+1;
         index[(i*3)+2] = 1+((i+1)%segmentCount);
-
-        //fprintf(stdout, "x:, %d, ", 0);
-        //fprintf(stdout, "y:, %d, ", i+1);
-        //fprintf(stdout, "z:, %d \n", 1+((i+1)%segmentCount));
     }
 
     unsigned int VBO, VAO, EBO;
@@ -143,14 +141,15 @@ void Geometry::generateCircle(float center_x, float center_y, float radius)
 
     glBindVertexArray(0);
 
-    struct circleData vals = {
-        VBO,
-        VAO,
-        EBO,
-        segmentCount*3
-    };
-
-    Renderer::NewDrawCall();
+    Renderer::NewDrawCall(new DrawCall{
+        Shader* shader = nullptr;
+        &VAO;
+        &VBO;
+        &EBO;
+        sizeof(VBO);
+        sizeof(EBO);
+        segmentCount;
+    });
 
     return vals;
 }

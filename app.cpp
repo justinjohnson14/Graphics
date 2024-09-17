@@ -17,6 +17,7 @@
 #include <stdlib.h>
 
 #include "Shader.h"
+#include "Renderer.h"
 
 struct circleData {
     unsigned int VBO;
@@ -33,6 +34,7 @@ struct circleData createCircle();
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+const double MS_PER_UPDATE = 1.0f;
 
 int main(void)
 {
@@ -59,6 +61,8 @@ int main(void)
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     gladLoadGL();
 
+    Renderer* renderer = new Renderer();
+
     Shader* shader1 = new Shader("./res/vertex.glsl", "./res/fragment.glsl");
     shader1->compile();
 
@@ -84,21 +88,25 @@ int main(void)
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    /* Loop until the user closes the window */
+    double previous = getCurrentTime();
+    double lag = 0.0;
+    
     while (!glfwWindowShouldClose(window))
     {
+        double current = getCurrentTime()
+        double elapsed = current - previous;
+        previous = current;
+        lag += elapsed;
+
         processInput(window);
 
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        while(lag >= MS_PER_UPDATE)
+        {
+            update();
+            lag -= MS_PER_UPDATE;
+        }
 
-        model = glm::translate(model, glm::vec3(0.1f, 0.0f, 0.0f));
-
-        shader1->use();
-        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-
-        glBindVertexArray(circle.VAO);
-        glDrawElements(GL_TRIANGLES, circle.count, GL_UNSIGNED_INT, 0);
+        renderer->Draw();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -126,4 +134,11 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 void drawDisk(float x, float y, float theta, float radius)
 {
     
+}
+
+double getCurrentTime()
+{
+    auto now = std::chrono::system_clock::now();
+    auto duration = now.time_since_epoch();
+    return chrono::duration_cast<chrono::milliseconds>(duration).count();
 }
