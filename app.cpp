@@ -14,19 +14,13 @@
 #include "Shader.h"
 #include "Renderer.h"
 
-struct circleData {
-    unsigned int VBO;
-    unsigned int VAO;
-    unsigned int EBO;
-    unsigned int count;
-};
-
 void framebuffer_size_callback(GLFWwindow*, int, int);
 void processInput(GLFWwindow*);
 unsigned int shader(const char*, const char*);
 const char* readFile(const char*);
 double getCurrentTime();
 void update();
+static void initLog();
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -137,4 +131,9 @@ double getCurrentTime()
 void update()
 {
     return;
+}
+
+static void initLog()
+{
+    
 }

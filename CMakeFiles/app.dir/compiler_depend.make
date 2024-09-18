@@ -96,11 +96,13 @@ CMakeFiles/app.dir/Renderer.cpp.o: Renderer.cpp \
   /usr/include/c++/14.2.1/bits/invoke.h \
   /usr/include/c++/14.2.1/bits/ios_base.h \
   /usr/include/c++/14.2.1/bits/istream.tcc \
+  /usr/include/c++/14.2.1/bits/iterator_concepts.h \
   /usr/include/c++/14.2.1/bits/locale_classes.h \
   /usr/include/c++/14.2.1/bits/locale_classes.tcc \
   /usr/include/c++/14.2.1/bits/locale_facets.h \
   /usr/include/c++/14.2.1/bits/locale_facets.tcc \
   /usr/include/c++/14.2.1/bits/localefwd.h \
+  /usr/include/c++/14.2.1/bits/max_size_type.h \
   /usr/include/c++/14.2.1/bits/memory_resource.h \
   /usr/include/c++/14.2.1/bits/memoryfwd.h \
   /usr/include/c++/14.2.1/bits/move.h \
@@ -112,6 +114,9 @@ CMakeFiles/app.dir/Renderer.cpp.o: Renderer.cpp \
   /usr/include/c++/14.2.1/bits/predefined_ops.h \
   /usr/include/c++/14.2.1/bits/ptr_traits.h \
   /usr/include/c++/14.2.1/bits/range_access.h \
+  /usr/include/c++/14.2.1/bits/ranges_base.h \
+  /usr/include/c++/14.2.1/bits/ranges_cmp.h \
+  /usr/include/c++/14.2.1/bits/ranges_util.h \
   /usr/include/c++/14.2.1/bits/refwrap.h \
   /usr/include/c++/14.2.1/bits/requires_hosted.h \
   /usr/include/c++/14.2.1/bits/sstream.tcc \
@@ -141,6 +146,7 @@ CMakeFiles/app.dir/Renderer.cpp.o: Renderer.cpp \
   /usr/include/c++/14.2.1/cctype \
   /usr/include/c++/14.2.1/cerrno \
   /usr/include/c++/14.2.1/clocale \
+  /usr/include/c++/14.2.1/compare \
   /usr/include/c++/14.2.1/concepts \
   /usr/include/c++/14.2.1/cstddef \
   /usr/include/c++/14.2.1/cstdio \
@@ -163,6 +169,7 @@ CMakeFiles/app.dir/Renderer.cpp.o: Renderer.cpp \
   /usr/include/c++/14.2.1/iostream \
   /usr/include/c++/14.2.1/istream \
   /usr/include/c++/14.2.1/new \
+  /usr/include/c++/14.2.1/numbers \
   /usr/include/c++/14.2.1/ostream \
   /usr/include/c++/14.2.1/pstl/pstl_config.h \
   /usr/include/c++/14.2.1/queue \
@@ -309,11 +316,13 @@ CMakeFiles/app.dir/Shader.cpp.o: Shader.cpp \
   /usr/include/c++/14.2.1/bits/invoke.h \
   /usr/include/c++/14.2.1/bits/ios_base.h \
   /usr/include/c++/14.2.1/bits/istream.tcc \
+  /usr/include/c++/14.2.1/bits/iterator_concepts.h \
   /usr/include/c++/14.2.1/bits/locale_classes.h \
   /usr/include/c++/14.2.1/bits/locale_classes.tcc \
   /usr/include/c++/14.2.1/bits/locale_facets.h \
   /usr/include/c++/14.2.1/bits/locale_facets.tcc \
   /usr/include/c++/14.2.1/bits/localefwd.h \
+  /usr/include/c++/14.2.1/bits/max_size_type.h \
   /usr/include/c++/14.2.1/bits/memory_resource.h \
   /usr/include/c++/14.2.1/bits/memoryfwd.h \
   /usr/include/c++/14.2.1/bits/move.h \
@@ -325,6 +334,9 @@ CMakeFiles/app.dir/Shader.cpp.o: Shader.cpp \
   /usr/include/c++/14.2.1/bits/predefined_ops.h \
   /usr/include/c++/14.2.1/bits/ptr_traits.h \
   /usr/include/c++/14.2.1/bits/range_access.h \
+  /usr/include/c++/14.2.1/bits/ranges_base.h \
+  /usr/include/c++/14.2.1/bits/ranges_cmp.h \
+  /usr/include/c++/14.2.1/bits/ranges_util.h \
   /usr/include/c++/14.2.1/bits/refwrap.h \
   /usr/include/c++/14.2.1/bits/requires_hosted.h \
   /usr/include/c++/14.2.1/bits/sstream.tcc \
@@ -347,6 +359,7 @@ CMakeFiles/app.dir/Shader.cpp.o: Shader.cpp \
   /usr/include/c++/14.2.1/cctype \
   /usr/include/c++/14.2.1/cerrno \
   /usr/include/c++/14.2.1/clocale \
+  /usr/include/c++/14.2.1/compare \
   /usr/include/c++/14.2.1/concepts \
   /usr/include/c++/14.2.1/cstddef \
   /usr/include/c++/14.2.1/cstdio \
@@ -368,6 +381,7 @@ CMakeFiles/app.dir/Shader.cpp.o: Shader.cpp \
   /usr/include/c++/14.2.1/iostream \
   /usr/include/c++/14.2.1/istream \
   /usr/include/c++/14.2.1/new \
+  /usr/include/c++/14.2.1/numbers \
   /usr/include/c++/14.2.1/ostream \
   /usr/include/c++/14.2.1/pstl/pstl_config.h \
   /usr/include/c++/14.2.1/sstream \
@@ -699,7 +713,10 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/array \
   /usr/include/c++/14.2.1/backward/binders.h \
   /usr/include/c++/14.2.1/bit \
+  /usr/include/c++/14.2.1/bits/algorithmfwd.h \
+  /usr/include/c++/14.2.1/bits/align.h \
   /usr/include/c++/14.2.1/bits/alloc_traits.h \
+  /usr/include/c++/14.2.1/bits/allocated_ptr.h \
   /usr/include/c++/14.2.1/bits/allocator.h \
   /usr/include/c++/14.2.1/bits/basic_ios.h \
   /usr/include/c++/14.2.1/bits/basic_ios.tcc \
@@ -708,6 +725,7 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/bits/char_traits.h \
   /usr/include/c++/14.2.1/bits/charconv.h \
   /usr/include/c++/14.2.1/bits/chrono.h \
+  /usr/include/c++/14.2.1/bits/chrono_io.h \
   /usr/include/c++/14.2.1/bits/codecvt.h \
   /usr/include/c++/14.2.1/bits/concept_check.h \
   /usr/include/c++/14.2.1/bits/cpp_type_traits.h \
@@ -728,11 +746,16 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/bits/invoke.h \
   /usr/include/c++/14.2.1/bits/ios_base.h \
   /usr/include/c++/14.2.1/bits/istream.tcc \
+  /usr/include/c++/14.2.1/bits/iterator_concepts.h \
   /usr/include/c++/14.2.1/bits/locale_classes.h \
   /usr/include/c++/14.2.1/bits/locale_classes.tcc \
+  /usr/include/c++/14.2.1/bits/locale_conv.h \
   /usr/include/c++/14.2.1/bits/locale_facets.h \
   /usr/include/c++/14.2.1/bits/locale_facets.tcc \
+  /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
+  /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
   /usr/include/c++/14.2.1/bits/localefwd.h \
+  /usr/include/c++/14.2.1/bits/max_size_type.h \
   /usr/include/c++/14.2.1/bits/memory_resource.h \
   /usr/include/c++/14.2.1/bits/memoryfwd.h \
   /usr/include/c++/14.2.1/bits/move.h \
@@ -745,13 +768,21 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/bits/postypes.h \
   /usr/include/c++/14.2.1/bits/predefined_ops.h \
   /usr/include/c++/14.2.1/bits/ptr_traits.h \
+  /usr/include/c++/14.2.1/bits/quoted_string.h \
   /usr/include/c++/14.2.1/bits/range_access.h \
+  /usr/include/c++/14.2.1/bits/ranges_algobase.h \
+  /usr/include/c++/14.2.1/bits/ranges_base.h \
+  /usr/include/c++/14.2.1/bits/ranges_cmp.h \
+  /usr/include/c++/14.2.1/bits/ranges_util.h \
   /usr/include/c++/14.2.1/bits/refwrap.h \
   /usr/include/c++/14.2.1/bits/requires_hosted.h \
+  /usr/include/c++/14.2.1/bits/shared_ptr.h \
+  /usr/include/c++/14.2.1/bits/shared_ptr_base.h \
   /usr/include/c++/14.2.1/bits/specfun.h \
   /usr/include/c++/14.2.1/bits/sstream.tcc \
   /usr/include/c++/14.2.1/bits/std_abs.h \
   /usr/include/c++/14.2.1/bits/std_function.h \
+  /usr/include/c++/14.2.1/bits/stl_algo.h \
   /usr/include/c++/14.2.1/bits/stl_algobase.h \
   /usr/include/c++/14.2.1/bits/stl_bvector.h \
   /usr/include/c++/14.2.1/bits/stl_construct.h \
@@ -763,12 +794,17 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/bits/stl_iterator_base_types.h \
   /usr/include/c++/14.2.1/bits/stl_pair.h \
   /usr/include/c++/14.2.1/bits/stl_queue.h \
+  /usr/include/c++/14.2.1/bits/stl_tempbuf.h \
   /usr/include/c++/14.2.1/bits/stl_uninitialized.h \
   /usr/include/c++/14.2.1/bits/stl_vector.h \
   /usr/include/c++/14.2.1/bits/streambuf.tcc \
   /usr/include/c++/14.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/14.2.1/bits/string_view.tcc \
   /usr/include/c++/14.2.1/bits/stringfwd.h \
+  /usr/include/c++/14.2.1/bits/unicode-data.h \
+  /usr/include/c++/14.2.1/bits/unicode.h \
+  /usr/include/c++/14.2.1/bits/uniform_int_dist.h \
+  /usr/include/c++/14.2.1/bits/unique_ptr.h \
   /usr/include/c++/14.2.1/bits/unordered_map.h \
   /usr/include/c++/14.2.1/bits/uses_allocator.h \
   /usr/include/c++/14.2.1/bits/uses_allocator_args.h \
@@ -779,6 +815,7 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/cctype \
   /usr/include/c++/14.2.1/cerrno \
   /usr/include/c++/14.2.1/cfloat \
+  /usr/include/c++/14.2.1/charconv \
   /usr/include/c++/14.2.1/chrono \
   /usr/include/c++/14.2.1/climits \
   /usr/include/c++/14.2.1/clocale \
@@ -800,23 +837,30 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/ext/aligned_buffer.h \
   /usr/include/c++/14.2.1/ext/alloc_traits.h \
   /usr/include/c++/14.2.1/ext/atomicity.h \
+  /usr/include/c++/14.2.1/ext/concurrence.h \
   /usr/include/c++/14.2.1/ext/numeric_traits.h \
   /usr/include/c++/14.2.1/ext/string_conversions.h \
   /usr/include/c++/14.2.1/ext/type_traits.h \
+  /usr/include/c++/14.2.1/format \
   /usr/include/c++/14.2.1/fstream \
   /usr/include/c++/14.2.1/functional \
   /usr/include/c++/14.2.1/initializer_list \
+  /usr/include/c++/14.2.1/iomanip \
   /usr/include/c++/14.2.1/ios \
   /usr/include/c++/14.2.1/iosfwd \
   /usr/include/c++/14.2.1/iostream \
   /usr/include/c++/14.2.1/istream \
   /usr/include/c++/14.2.1/limits \
+  /usr/include/c++/14.2.1/locale \
   /usr/include/c++/14.2.1/math.h \
   /usr/include/c++/14.2.1/new \
+  /usr/include/c++/14.2.1/numbers \
+  /usr/include/c++/14.2.1/optional \
   /usr/include/c++/14.2.1/ostream \
   /usr/include/c++/14.2.1/pstl/pstl_config.h \
   /usr/include/c++/14.2.1/queue \
   /usr/include/c++/14.2.1/ratio \
+  /usr/include/c++/14.2.1/span \
   /usr/include/c++/14.2.1/sstream \
   /usr/include/c++/14.2.1/stdexcept \
   /usr/include/c++/14.2.1/stdlib.h \
@@ -840,6 +884,7 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/type_traits \
   /usr/include/c++/14.2.1/typeinfo \
   /usr/include/c++/14.2.1/unordered_map \
+  /usr/include/c++/14.2.1/variant \
   /usr/include/c++/14.2.1/vector \
   /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
   /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
@@ -853,7 +898,9 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
   /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
+  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
   /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
+  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -862,6 +909,7 @@ CMakeFiles/app.dir/app.cpp.o: app.cpp \
   /usr/include/glad/glad.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
+  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
@@ -971,6 +1019,8 @@ CMakeFiles/app.dir/glad/src/glad.c.o: glad/src/glad.c \
 
 /usr/include/limits.h:
 
+/usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h:
+
 /usr/include/c++/14.2.1/tr1/riemann_zeta.tcc:
 
 /usr/include/c++/14.2.1/tr1/poly_hermite.tcc:
@@ -983,21 +1033,43 @@ CMakeFiles/app.dir/glad/src/glad.c.o: glad/src/glad.c \
 
 /usr/include/c++/14.2.1/tr1/beta_function.tcc:
 
+/usr/include/c++/14.2.1/optional:
+
+/usr/include/c++/14.2.1/locale:
+
+/usr/include/c++/14.2.1/ext/concurrence.h:
+
 /usr/include/c++/14.2.1/cstring:
 
 /usr/include/c++/14.2.1/cstdint:
 
-/usr/include/c++/14.2.1/compare:
-
 /usr/include/c++/14.2.1/cmath:
+
+/usr/include/c++/14.2.1/charconv:
 
 /usr/include/c++/14.2.1/cassert:
 
 /usr/include/c++/14.2.1/bits/unordered_map.h:
 
+/usr/include/c++/14.2.1/bits/unique_ptr.h:
+
+/usr/include/c++/14.2.1/bits/unicode.h:
+
+/usr/include/c++/14.2.1/bits/unicode-data.h:
+
+/usr/include/c++/14.2.1/bits/stl_tempbuf.h:
+
+/usr/include/c++/14.2.1/bits/stl_algo.h:
+
+/usr/include/c++/14.2.1/bits/ranges_algobase.h:
+
 /usr/include/c++/14.2.1/bits/parse_numbers.h:
 
 /usr/include/c++/14.2.1/bits/node_handle.h:
+
+/usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/14.2.1/bits/locale_conv.h:
 
 /usr/include/c++/14.2.1/bits/hashtable.h:
 
@@ -1005,9 +1077,13 @@ CMakeFiles/app.dir/glad/src/glad.c.o: glad/src/glad.c \
 
 /usr/include/c++/14.2.1/bits/enable_special_members.h:
 
+/usr/include/c++/14.2.1/bits/chrono_io.h:
+
 /usr/include/c++/14.2.1/bits/chrono.h:
 
 /usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/include/c++/14.2.1/span:
 
 /usr/include/bits/libm-simd-decl-stubs.h:
 
@@ -1033,6 +1109,8 @@ _deps/glm-src/glm/ext/matrix_clip_space.hpp:
 
 _deps/glm-src/glm/ext/vector_uint1_sized.hpp:
 
+/usr/include/c++/14.2.1/bits/align.h:
+
 _deps/glm-src/glm/ext/vector_relational.hpp:
 
 _deps/glm-src/glm/ext/vector_int1_sized.hpp:
@@ -1054,6 +1132,8 @@ _deps/glm-src/glm/ext/vector_double1_precision.hpp:
 _deps/glm-src/glm/ext/matrix_transform.hpp:
 
 _deps/glm-src/glm/ext/vector_double1.hpp:
+
+/usr/include/c++/14.2.1/format:
 
 _deps/glm-src/glm/trigonometric.hpp:
 
@@ -1086,6 +1166,8 @@ _deps/glm-src/glm/detail/type_half.hpp:
 _deps/glm-src/glm/detail/func_packing.inl:
 
 _deps/glm-src/glm/detail/func_integer.inl:
+
+/usr/include/c++/14.2.1/bits/shared_ptr_base.h:
 
 _deps/glm-src/glm/ext/vector_uint3.hpp:
 
@@ -1149,6 +1231,8 @@ _deps/glm-src/glm/detail/type_vec3.inl:
 
 /usr/include/c++/14.2.1/tr1/bessel_function.tcc:
 
+/usr/include/c++/14.2.1/bits/shared_ptr.h:
+
 _deps/glm-src/glm/detail/type_vec2.inl:
 
 _deps/glm-src/glm/detail/type_vec2.hpp:
@@ -1164,6 +1248,8 @@ _deps/glm-src/glm/ext/vector_bool1.hpp:
 _deps/glm-src/glm/matrix.hpp:
 
 _deps/glm-src/glm/mat4x4.hpp:
+
+/usr/include/c++/14.2.1/bits/quoted_string.h:
 
 _deps/glm-src/glm/mat3x4.hpp:
 
@@ -1199,6 +1285,8 @@ _deps/glm-src/glm/detail/compute_vector_relational.hpp:
 
 _deps/glm-src/glm/ext/matrix_float2x4.hpp:
 
+/usr/include/c++/14.2.1/iomanip:
+
 _deps/glm-src/glm/ext/matrix_float2x3_precision.hpp:
 
 _deps/glm-src/glm/ext/matrix_float2x3.hpp:
@@ -1221,27 +1309,25 @@ _deps/glm-src/glm/detail/type_vec4.inl:
 
 _deps/glm-src/glm/ext/matrix_double4x2_precision.hpp:
 
-/usr/include/bits/types/cookie_io_functions_t.h:
+/usr/include/c++/14.2.1/climits:
 
-/usr/include/c++/14.2.1/bits/stl_iterator_base_funcs.h:
+_deps/glm-src/glm/ext/matrix_double3x4_precision.hpp:
 
-/usr/include/c++/14.2.1/bits/basic_string.h:
+_deps/glm-src/glm/ext/matrix_double3x4.hpp:
 
-_deps/glm-src/glm/ext/vector_uint4_sized.hpp:
+_deps/glm-src/glm/ext/matrix_double3x3.hpp:
 
-/usr/include/bits/pthreadtypes.h:
+_deps/glm-src/glm/ext/scalar_uint_sized.hpp:
+
+_deps/glm-src/glm/ext/matrix_double3x2_precision.hpp:
 
 /usr/include/bits/time64.h:
-
-/usr/include/bits/stdlib-float.h:
 
 /usr/include/c++/14.2.1/cstdlib:
 
 /usr/include/c++/14.2.1/bits/stl_algobase.h:
 
 /usr/include/c++/14.2.1/bits/requires_hosted.h:
-
-/usr/include/c++/14.2.1/bits/ptr_traits.h:
 
 /usr/include/c++/14.2.1/bits/ostream_insert.h:
 
@@ -1257,9 +1343,11 @@ _deps/glm-src/glm/ext/vector_uint2.hpp:
 
 /usr/include/c++/14.2.1/bits/move.h:
 
+/usr/include/c++/14.2.1/bits/allocated_ptr.h:
+
 /usr/include/linux/errno.h:
 
-/usr/include/c++/14.2.1/bits/stl_iterator_base_types.h:
+/usr/include/c++/14.2.1/bits/max_size_type.h:
 
 _deps/glm-src/glm/ext/vector_relational.inl:
 
@@ -1272,8 +1360,6 @@ glad/src/glad.c:
 /usr/include/c++/14.2.1/bits/stl_deque.h:
 
 /usr/include/c++/14.2.1/bits/hash_bytes.h:
-
-_deps/glm-src/glm/ext/matrix_double3x3.hpp:
 
 /usr/include/bits/mathcalls-narrow.h:
 
@@ -1297,9 +1383,17 @@ _deps/glm-src/glm/ext/matrix_double2x4_precision.hpp:
 
 /usr/include/c++/14.2.1/bits/cxxabi_init_exception.h:
 
+_deps/glm-src/glm/gtc/epsilon.inl:
+
+app.cpp:
+
+/usr/include/bits/floatn.h:
+
 _deps/glm-src/glm/detail/type_mat4x4.hpp:
 
-_deps/glm-src/glm/ext/matrix_double3x4.hpp:
+_deps/glm-src/glm/ext/matrix_double4x2.hpp:
+
+/usr/include/c++/14.2.1/bits/cpp_type_traits.h:
 
 _deps/glm-src/glm/gtc/vec1.hpp:
 
@@ -1327,6 +1421,14 @@ _deps/glm-src/glm/detail/type_vec4.hpp:
 
 /usr/include/c++/14.2.1/bits/exception_ptr.h:
 
+/usr/include/c++/14.2.1/bits/basic_string.h:
+
+_deps/glm-src/glm/ext/vector_uint4_sized.hpp:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/c++/14.2.1/bits/stl_iterator_base_funcs.h:
+
 /usr/include/c++/14.2.1/bits/istream.tcc:
 
 Renderer.h:
@@ -1338,6 +1440,14 @@ Renderer.h:
 _deps/glm-src/glm/ext/vector_bool4.hpp:
 
 /usr/include/bits/timesize.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/c++/14.2.1/bits/ranges_base.h:
+
+/usr/include/c++/14.2.1/iosfwd:
+
+/usr/include/c++/14.2.1/bits/iterator_concepts.h:
 
 _deps/glm-src/glm/glm.hpp:
 
@@ -1363,6 +1473,8 @@ _deps/glm-src/glm/geometric.hpp:
 
 /usr/include/c++/14.2.1/tr1/special_function_util.h:
 
+/usr/include/c++/14.2.1/bits/algorithmfwd.h:
+
 /usr/include/bits/select.h:
 
 /usr/include/c++/14.2.1/bits/uses_allocator_args.h:
@@ -1379,13 +1491,13 @@ _deps/glm-src/glm/ext/matrix_float3x2.hpp:
 
 /usr/include/bits/libc-header-start.h:
 
-/usr/include/c++/14.2.1/bits/stl_pair.h:
-
 /usr/include/bits/types/mbstate_t.h:
 
 _deps/glm-src/glm/gtc/type_ptr.hpp:
 
 /usr/include/bits/locale.h:
+
+/usr/include/c++/14.2.1/bits/ranges_util.h:
 
 _deps/glm-src/glm/ext/vector_bool1_precision.hpp:
 
@@ -1422,8 +1534,6 @@ _deps/glm-src/glm/ext/vector_float3.hpp:
 /usr/include/bits/endian.h:
 
 /usr/include/c++/14.2.1/concepts:
-
-/usr/include/c++/14.2.1/bits/stl_queue.h:
 
 _deps/glm-src/glm/mat2x4.hpp:
 
@@ -1493,6 +1603,10 @@ _deps/glm-src/glm/ext/vector_uint3_sized.hpp:
 
 /usr/include/bits/cpu-set.h:
 
+/usr/include/c++/14.2.1/bits/ptr_traits.h:
+
+/usr/include/c++/14.2.1/bits/ranges_cmp.h:
+
 /usr/include/c++/14.2.1/bits/locale_classes.tcc:
 
 /usr/include/bits/struct_mutex.h:
@@ -1506,10 +1620,6 @@ _deps/glm-src/glm/ext/vector_float2.hpp:
 /usr/include/bits/types/time_t.h:
 
 /usr/include/c++/14.2.1/stdexcept:
-
-_deps/glm-src/glm/ext/scalar_uint_sized.hpp:
-
-_deps/glm-src/glm/ext/matrix_double3x2_precision.hpp:
 
 _deps/glad-src/include/KHR/khrplatform.h:
 
@@ -1573,6 +1683,8 @@ _deps/glm-src/glm/ext/matrix_double2x3.hpp:
 
 /usr/include/bits/sched.h:
 
+/usr/include/bits/types/cookie_io_functions_t.h:
+
 /usr/include/c++/14.2.1/bits/version.h:
 
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
@@ -1603,7 +1715,15 @@ _deps/glm-src/glm/ext/quaternion_common.hpp:
 
 /usr/include/bits/types/struct_tm.h:
 
+/usr/include/c++/14.2.1/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/14.2.1/bits/stl_pair.h:
+
+/usr/include/c++/14.2.1/bits/stl_queue.h:
+
 /usr/include/c++/14.2.1/bits/stl_vector.h:
+
+/usr/include/c++/14.2.1/variant:
 
 /usr/include/c++/14.2.1/bits/streambuf.tcc:
 
@@ -1614,10 +1734,6 @@ _deps/glm-src/glm/ext/vector_uint4.hpp:
 Shader.h:
 
 /usr/include/c++/14.2.1/bits/string_view.tcc:
-
-/usr/include/c++/14.2.1/climits:
-
-_deps/glm-src/glm/ext/matrix_double3x4_precision.hpp:
 
 /usr/include/c++/14.2.1/bits/stringfwd.h:
 
@@ -1651,6 +1767,8 @@ _deps/glm-src/glm/gtc/quaternion.inl:
 
 /usr/include/c++/14.2.1/cerrno:
 
+/usr/include/c++/14.2.1/compare:
+
 /usr/include/c++/14.2.1/cstdio:
 
 /usr/include/c++/14.2.1/cwctype:
@@ -1667,6 +1785,10 @@ _deps/glm-src/glm/ext/matrix_float4x2_precision.hpp:
 
 /usr/include/pthread.h:
 
+_deps/glm-src/glm/detail/type_vec1.inl:
+
+/usr/include/c++/14.2.1/debug/debug.h:
+
 /usr/include/c++/14.2.1/streambuf:
 
 /usr/include/c++/14.2.1/deque:
@@ -1676,6 +1798,8 @@ _deps/glm-src/glm/ext/matrix_float4x2_precision.hpp:
 /usr/include/bits/types/__locale_t.h:
 
 /usr/include/c++/14.2.1/ext/alloc_traits.h:
+
+/usr/include/libintl.h:
 
 /usr/include/bits/endianness.h:
 
@@ -1701,7 +1825,7 @@ _deps/glm-src/glm/detail/type_vec1.hpp:
 
 /usr/include/c++/14.2.1/ios:
 
-/usr/include/c++/14.2.1/iosfwd:
+/usr/include/c++/14.2.1/numbers:
 
 /usr/include/bits/xopen_lim.h:
 
@@ -1712,6 +1836,8 @@ _deps/glm-src/glm/detail/type_vec1.hpp:
 /usr/include/features-time64.h:
 
 /usr/include/c++/14.2.1/pstl/pstl_config.h:
+
+/usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h:
 
 _deps/glm-src/glm/vec2.hpp:
 
@@ -1739,6 +1865,14 @@ _deps/glm-src/glm/detail/type_mat2x4.hpp:
 
 /usr/include/c++/14.2.1/vector:
 
+/usr/include/bits/posix1_lim.h:
+
+_deps/glm-src/glm/ext/matrix_double3x2.hpp:
+
+/usr/include/c++/14.2.1/clocale:
+
+/usr/include/wchar.h:
+
 _deps/glm-src/glm/detail/type_mat4x4.inl:
 
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h:
@@ -1747,9 +1881,9 @@ _deps/glm-src/glm/detail/type_mat4x4.inl:
 
 _deps/glm-src/glm/detail/func_vector_relational.inl:
 
-/usr/include/c++/14.2.1/system_error:
-
 _deps/glm-src/glm/ext/matrix_double3x3_precision.hpp:
+
+/usr/include/c++/14.2.1/system_error:
 
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/error_constants.h:
 
@@ -1771,6 +1905,12 @@ _deps/glm-src/glm/detail/_vectorize.hpp:
 
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
+/usr/include/c++/14.2.1/bits/ostream.tcc:
+
+/usr/include/stdint.h:
+
+/usr/include/endian.h:
+
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++locale.h:
 
 /usr/include/errno.h:
@@ -1785,6 +1925,8 @@ _deps/glm-src/glm/integer.hpp:
 
 /usr/include/gnu/stubs-64.h:
 
+/usr/include/c++/14.2.1/bits/uniform_int_dist.h:
+
 /usr/include/locale.h:
 
 /usr/include/bits/fp-fast.h:
@@ -1794,12 +1936,6 @@ _deps/glm-src/glm/integer.hpp:
 /usr/include/sched.h:
 
 /usr/include/stdc-predef.h:
-
-/usr/include/c++/14.2.1/bits/ostream.tcc:
-
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
 
 _deps/glm-src/glm/detail/type_vec3.hpp:
 
@@ -1819,12 +1955,6 @@ _deps/glm-src/glm/mat4x2.hpp:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdarg.h:
 
-_deps/glm-src/glm/gtc/epsilon.inl:
-
-/usr/include/bits/floatn.h:
-
-app.cpp:
-
 _deps/glfw-src/include/GLFW/glfw3.h:
 
 _deps/glm-src/glm/mat4x3.hpp:
@@ -1834,10 +1964,6 @@ _deps/glm-src/glm/exponential.hpp:
 _deps/glm-src/glm/detail/func_trigonometric.inl:
 
 _deps/glm-src/glm/detail/_fixes.hpp:
-
-/usr/include/c++/14.2.1/debug/debug.h:
-
-_deps/glm-src/glm/detail/type_vec1.inl:
 
 /usr/include/c++/14.2.1/unordered_map:
 
@@ -1861,6 +1987,8 @@ _deps/glm-src/glm/detail/type_mat3x3.hpp:
 
 _deps/glm-src/glm/detail/type_mat3x3.inl:
 
+/usr/include/c++/14.2.1/bits/locale_facets_nonio.h:
+
 _deps/glm-src/glm/detail/func_exponential.inl:
 
 _deps/glm-src/glm/detail/type_mat4x2.inl:
@@ -1874,15 +2002,3 @@ _deps/glm-src/glm/ext/matrix_float4x3_precision.hpp:
 _deps/glm-src/glm/detail/type_mat4x3.hpp:
 
 _deps/glm-src/glm/ext/matrix_double2x4.hpp:
-
-/usr/include/bits/posix1_lim.h:
-
-/usr/include/c++/14.2.1/clocale:
-
-/usr/include/wchar.h:
-
-_deps/glm-src/glm/ext/matrix_double3x2.hpp:
-
-/usr/include/c++/14.2.1/bits/cpp_type_traits.h:
-
-_deps/glm-src/glm/ext/matrix_double4x2.hpp:

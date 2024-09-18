@@ -39,3 +39,4 @@ CMakeFiles
 *.in
 CMakeCache.txt
 Makefile
+libs

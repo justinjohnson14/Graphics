@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/justin/Documents/graphics/_deps/glad-src/include
 
-C_FLAGS = 
+C_FLAGS = -std=gnu2x
 
