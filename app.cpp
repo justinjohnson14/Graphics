@@ -1,3 +1,5 @@
+#include "Window.h"
+#include <memory>
 #define GLAD_GL_IMPLEMENTATION
 #include <glad/glad.h>
 #define GLFW_INCLUDE_NONE
@@ -6,119 +8,56 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <chrono>
-#include <math.h>
 
-#include "Shader.h"
 #include "Renderer.h"
 
-void framebuffer_size_callback(GLFWwindow*, int, int);
-void processInput(GLFWwindow*);
+void init();
+void run();
+
 unsigned int shader(const char*, const char*);
 const char* readFile(const char*);
 double getCurrentTime();
 void update();
 static void initLog();
 
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+
+std::unique_ptr<Window> window;
+std::unique_ptr<Renderer> renderer;
+
 const double MS_PER_UPDATE = 1.0f;
 
 int main(void)
 {
-    GLFWwindow* window;
+    init();
 
-    /* Initialize the library */
-    if (!glfwInit())
-        return -1;
+    //Shader* shader1 = new Shader("./res/vertex.glsl", "./res/fragment.glsl");
+    //shader1->compile();
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    //shader1->use();
 
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Hello World", NULL, NULL);
-    if (!window)
-    {
-        glfwTerminate();
-        return -1;
-    }
+    //glm::mat4 model = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
+    //glm::mat4 view = glm::mat4(1.0f);
+    //glm::mat4 projection = glm::mat4(1.0f);
 
-    /* Make the window's context current */
-    glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    gladLoadGL();
+    //model = glm::scale(model, glm::vec3(10.0f, 10.0f, 0.0f));
 
-    Renderer* renderer = new Renderer();
+    //projection = glm::ortho(0.0f, (float)SCR_WIDTH, (float)SCR_HEIGHT,0.0f);
 
-    Shader* shader1 = new Shader("./res/vertex.glsl", "./res/fragment.glsl");
-    shader1->compile();
-
-    shader1->use();
-
-    glm::mat4 model = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
-    glm::mat4 view = glm::mat4(1.0f);
-    glm::mat4 projection = glm::mat4(1.0f);
-
-    model = glm::scale(model, glm::vec3(10.0f, 10.0f, 0.0f));
-    
-    projection = glm::ortho(0.0f, (float)SCR_WIDTH, (float)SCR_HEIGHT,0.0f);
-
-    unsigned int modelLoc = glGetUniformLocation(shader1->ID, "model");
-    unsigned int viewLoc = glGetUniformLocation(shader1->ID, "view");
-    unsigned int projectionLoc = glGetUniformLocation(shader1->ID, "projection");
-
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-    glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+    //unsigned int modelLoc = glGetUniformLocation(shader1->ID, "model");
+    //unsigned int viewLoc = glGetUniformLocation(shader1->ID, "view");
+    //unsigned int projectionLoc = glGetUniformLocation(shader1->ID, "projection");
+    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+    //glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+    //glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    double previous = getCurrentTime();
-    double lag = 0.0;
-    
-    while (!glfwWindowShouldClose(window))
-    {
-        double current = getCurrentTime();
-        double elapsed = current - previous;
-        previous = current;
-        lag += elapsed;
+    run();
+    //glDeleteProgram(shader1->ID);
 
-        processInput(window);
-
-        while(lag >= MS_PER_UPDATE)
-        {
-            update();
-            lag -= MS_PER_UPDATE;
-        }
-
-        renderer->Draw();
-
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-    glDeleteProgram(shader1->ID);
-
-    glfwTerminate();
+    //glfwTerminate();
     return 0;
-}
-
-void processInput(GLFWwindow* window)
-{
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, 1);
-}
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0,0, width, height);
-}
-
-void drawDisk(float x, float y, float theta, float radius)
-{
-    
 }
 
 double getCurrentTime()
@@ -133,7 +72,38 @@ void update()
     return;
 }
 
+void init()
+{
+    window = std::make_unique<Window>();
+    renderer = std::make_unique<Renderer>();
+}
+
+void run()
+{
+    double previous = getCurrentTime();
+    double lag = 0.0;
+    while (window->running)
+    {
+        double current = getCurrentTime();
+        double elapsed = current - previous;
+        previous = current;
+        lag += elapsed;
+
+        window->processInput();
+
+        while(lag >= MS_PER_UPDATE)
+        {
+            update();
+            lag -= MS_PER_UPDATE;
+        }
+
+        renderer->Draw();
+
+        window->swapBuffers();
+    }
+}
+
 static void initLog()
 {
-    
+
 }
