@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.17)
 
 project(app)
 
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 
 FetchContent_Declare(
     imgui-glfw-glad-glm
@@ -12,7 +12,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(imgui-glfw-glad-glm)
 
-add_executable(app app.cpp Shader.cpp glad/src/glad.c)
+add_executable(app app.cpp Shader.cpp Renderer.cpp glad/src/glad.c)
 
 target_link_libraries(
     app
@@ -27,4 +27,6 @@ target_link_libraries(
     dl
     Xinerama
     Xcursor
+    assimp
+    spdlog
 )

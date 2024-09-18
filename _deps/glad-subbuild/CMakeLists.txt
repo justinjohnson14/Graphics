@@ -19,7 +19,7 @@ project(glad-populate NONE)
 
 include(ExternalProject)
 ExternalProject_Add(glad-populate
-                     "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "FALSE" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "URL" "https://gen.glad.sh/generated/tmpxr4bfcgyglad/glad.zip"
+                     "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "FALSE" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "URL" "https://gen.glad.sh/generated/tmpzzupbz8yglad/glad.zip"
                     SOURCE_DIR          "/home/justin/Documents/graphics/_deps/glad-src"
                     BINARY_DIR          "/home/justin/Documents/graphics/_deps/glad-build"
                     CONFIGURE_COMMAND   ""

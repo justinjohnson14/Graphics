@@ -107,7 +107,7 @@ foreach(i RANGE ${retry_number})
   if(status_code IN_LIST download_retry_codes)
     sleep_before_download(${i})
   endif()
-  foreach(url IN ITEMS [====[https://gen.glad.sh/generated/tmpxr4bfcgyglad/glad.zip]====])
+  foreach(url IN ITEMS [====[https://gen.glad.sh/generated/tmpzzupbz8yglad/glad.zip]====])
     if(NOT url IN_LIST skip_url_list)
       message(VERBOSE "Using src='${url}'")
 

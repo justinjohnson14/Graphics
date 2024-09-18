@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/app.dir/Renderer.cpp.o"
+  "CMakeFiles/app.dir/Renderer.cpp.o.d"
   "CMakeFiles/app.dir/Shader.cpp.o"
   "CMakeFiles/app.dir/Shader.cpp.o.d"
   "CMakeFiles/app.dir/app.cpp.o"

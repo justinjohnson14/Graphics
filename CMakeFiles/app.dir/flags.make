@@ -7,11 +7,11 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/justin/Documents/graphics/_deps/glad-src/include -I/home/justin/Documents/graphics/_deps/imgui-src -I/home/justin/Documents/graphics/_deps/imgui-src/backends -I/home/justin/Documents/graphics/_deps/glfw-src/include -I/home/justin/Documents/graphics/_deps/glm-src
 
-C_FLAGS = -std=gnu17
+C_FLAGS = -std=gnu2x
 
 CXX_DEFINES = 
 
 CXX_INCLUDES = -I/home/justin/Documents/graphics/_deps/glad-src/include -I/home/justin/Documents/graphics/_deps/imgui-src -I/home/justin/Documents/graphics/_deps/imgui-src/backends -I/home/justin/Documents/graphics/_deps/glfw-src/include -I/home/justin/Documents/graphics/_deps/glm-src
 
-CXX_FLAGS = -std=gnu++17
+CXX_FLAGS = -std=gnu++20
 
