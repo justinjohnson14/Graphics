@@ -1,14 +1,6 @@
+#include "Util.h"
+
 #include "Window.h"
-#include <memory>
-#define GLAD_GL_IMPLEMENTATION
-#include <glad/glad.h>
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-
-#include <glm/glm.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-#include <chrono>
 
 #include "Renderer.h"
 
@@ -29,12 +21,9 @@ const double MS_PER_UPDATE = 1.0f;
 
 int main(void)
 {
+    window = std::make_unique<Window>();
+    renderer = std::make_unique<Renderer>();
     init();
-
-    //Shader* shader1 = new Shader("./res/vertex.glsl", "./res/fragment.glsl");
-    //shader1->compile();
-
-    //shader1->use();
 
     //glm::mat4 model = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
     //glm::mat4 view = glm::mat4(1.0f);
@@ -54,9 +43,6 @@ int main(void)
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     run();
-    //glDeleteProgram(shader1->ID);
-
-    //glfwTerminate();
     return 0;
 }
 
@@ -74,8 +60,8 @@ void update()
 
 void init()
 {
-    window = std::make_unique<Window>();
-    renderer = std::make_unique<Renderer>();
+    window->init();
+    renderer->init();
 }
 
 void run()

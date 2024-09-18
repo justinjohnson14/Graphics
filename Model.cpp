@@ -5,16 +5,43 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
+#include <cstddef>
+#include <glad/glad.h>
 #include <glm/ext/vector_float2.hpp>
 #include <iostream>
 #include <vector>
 
-Model::Model(const std::string& file)
+Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int>indicies, std::vector<Texture> textures) :
+    vertices(vertices), indicies(indicies), textures(textures)
 {
-
+    Mesh::setupMesh();
 }
 
+void Mesh::setupMesh()
+{
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
 
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+    glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(Vertex),&vertices[0], GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indicies.size() * sizeof(unsigned int), &indicies[0], GL_STATIC_DRAW);
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
+
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
+
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texCoords));
+
+    glBindVertexArray(0);
+}
 
 void Model::load(const std::string& file)
 {
@@ -25,7 +52,7 @@ void Model::load(const std::string& file)
     if(nullptr == scene)
         std::cerr << "Error importing file: " + file << std::endl;
 
-    
+
     processNode(scene->mRootNode, scene);
 }
 

@@ -16,6 +16,8 @@ public:
         int count = 0;
     };
 
+    void init();
+
     void Draw();
     void NewDrawCall(DrawCall&);
 private:

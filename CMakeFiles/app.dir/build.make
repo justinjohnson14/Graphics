@@ -111,10 +111,80 @@ CMakeFiles/app.dir/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/Renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justin/Documents/graphics/Renderer.cpp -o CMakeFiles/app.dir/Renderer.cpp.s
 
+CMakeFiles/app.dir/Memory.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Memory.cpp.o: Memory.cpp
+CMakeFiles/app.dir/Memory.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/app.dir/Memory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/Memory.cpp.o -MF CMakeFiles/app.dir/Memory.cpp.o.d -o CMakeFiles/app.dir/Memory.cpp.o -c /home/justin/Documents/graphics/Memory.cpp
+
+CMakeFiles/app.dir/Memory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/Memory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/justin/Documents/graphics/Memory.cpp > CMakeFiles/app.dir/Memory.cpp.i
+
+CMakeFiles/app.dir/Memory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/Memory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justin/Documents/graphics/Memory.cpp -o CMakeFiles/app.dir/Memory.cpp.s
+
+CMakeFiles/app.dir/Model.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Model.cpp.o: Model.cpp
+CMakeFiles/app.dir/Model.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/Model.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/Model.cpp.o -MF CMakeFiles/app.dir/Model.cpp.o.d -o CMakeFiles/app.dir/Model.cpp.o -c /home/justin/Documents/graphics/Model.cpp
+
+CMakeFiles/app.dir/Model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/Model.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/justin/Documents/graphics/Model.cpp > CMakeFiles/app.dir/Model.cpp.i
+
+CMakeFiles/app.dir/Model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/Model.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justin/Documents/graphics/Model.cpp -o CMakeFiles/app.dir/Model.cpp.s
+
+CMakeFiles/app.dir/Object.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Object.cpp.o: Object.cpp
+CMakeFiles/app.dir/Object.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/Object.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/Object.cpp.o -MF CMakeFiles/app.dir/Object.cpp.o.d -o CMakeFiles/app.dir/Object.cpp.o -c /home/justin/Documents/graphics/Object.cpp
+
+CMakeFiles/app.dir/Object.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/Object.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/justin/Documents/graphics/Object.cpp > CMakeFiles/app.dir/Object.cpp.i
+
+CMakeFiles/app.dir/Object.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/Object.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justin/Documents/graphics/Object.cpp -o CMakeFiles/app.dir/Object.cpp.s
+
+CMakeFiles/app.dir/ResourceManager.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/ResourceManager.cpp.o: ResourceManager.cpp
+CMakeFiles/app.dir/ResourceManager.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app.dir/ResourceManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/ResourceManager.cpp.o -MF CMakeFiles/app.dir/ResourceManager.cpp.o.d -o CMakeFiles/app.dir/ResourceManager.cpp.o -c /home/justin/Documents/graphics/ResourceManager.cpp
+
+CMakeFiles/app.dir/ResourceManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/ResourceManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/justin/Documents/graphics/ResourceManager.cpp > CMakeFiles/app.dir/ResourceManager.cpp.i
+
+CMakeFiles/app.dir/ResourceManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/ResourceManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justin/Documents/graphics/ResourceManager.cpp -o CMakeFiles/app.dir/ResourceManager.cpp.s
+
+CMakeFiles/app.dir/Window.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Window.cpp.o: Window.cpp
+CMakeFiles/app.dir/Window.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/Window.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/Window.cpp.o -MF CMakeFiles/app.dir/Window.cpp.o.d -o CMakeFiles/app.dir/Window.cpp.o -c /home/justin/Documents/graphics/Window.cpp
+
+CMakeFiles/app.dir/Window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/Window.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/justin/Documents/graphics/Window.cpp > CMakeFiles/app.dir/Window.cpp.i
+
+CMakeFiles/app.dir/Window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/Window.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justin/Documents/graphics/Window.cpp -o CMakeFiles/app.dir/Window.cpp.s
+
 CMakeFiles/app.dir/glad/src/glad.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/glad/src/glad.c.o: glad/src/glad.c
 CMakeFiles/app.dir/glad/src/glad.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/glad/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/app.dir/glad/src/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/glad/src/glad.c.o -MF CMakeFiles/app.dir/glad/src/glad.c.o.d -o CMakeFiles/app.dir/glad/src/glad.c.o -c /home/justin/Documents/graphics/glad/src/glad.c
 
 CMakeFiles/app.dir/glad/src/glad.c.i: cmake_force
@@ -130,6 +200,11 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/app.cpp.o" \
 "CMakeFiles/app.dir/Shader.cpp.o" \
 "CMakeFiles/app.dir/Renderer.cpp.o" \
+"CMakeFiles/app.dir/Memory.cpp.o" \
+"CMakeFiles/app.dir/Model.cpp.o" \
+"CMakeFiles/app.dir/Object.cpp.o" \
+"CMakeFiles/app.dir/ResourceManager.cpp.o" \
+"CMakeFiles/app.dir/Window.cpp.o" \
 "CMakeFiles/app.dir/glad/src/glad.c.o"
 
 # External object files for target app
@@ -138,6 +213,11 @@ app_EXTERNAL_OBJECTS =
 app: CMakeFiles/app.dir/app.cpp.o
 app: CMakeFiles/app.dir/Shader.cpp.o
 app: CMakeFiles/app.dir/Renderer.cpp.o
+app: CMakeFiles/app.dir/Memory.cpp.o
+app: CMakeFiles/app.dir/Model.cpp.o
+app: CMakeFiles/app.dir/Object.cpp.o
+app: CMakeFiles/app.dir/ResourceManager.cpp.o
+app: CMakeFiles/app.dir/Window.cpp.o
 app: CMakeFiles/app.dir/glad/src/glad.c.o
 app: CMakeFiles/app.dir/build.make
 app: _deps/imgui-glfw-glad-glm-build/libglad.a
@@ -148,7 +228,7 @@ app: _deps/glfw-build/src/libglfw3.a
 app: /usr/lib/librt.a
 app: /usr/lib/libm.so
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/justin/Documents/graphics/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

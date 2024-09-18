@@ -35,9 +35,7 @@ private:
 
 class Model : public Resource{
 public:
-    Model();
-    Model(const std::string&);
-    void load() override;
+    Model()=default;
     void load(const std::string&) override;
     void processNode(aiNode*,const aiScene*);
     Mesh processMesh(aiMesh*, const aiScene*);

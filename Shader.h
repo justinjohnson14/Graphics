@@ -11,12 +11,11 @@
 
 class Shader : public Resource{
 public:
-    Shader();
+    Shader()=default;
     Shader(const std::string&, const std::string&);
 
-    void load(const GLuint&, const std::string&) override;
 
-    void load() override;
+    void load(const GLuint&, const std::string&) override;
 
     void compile();
 

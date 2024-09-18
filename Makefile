@@ -265,6 +265,78 @@ glm/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/glm-build/glm/CMakeFiles/glm.dir/build.make _deps/glm-build/glm/CMakeFiles/glm.dir/build
 .PHONY : glm/fast
 
+Memory.o: Memory.cpp.o
+.PHONY : Memory.o
+
+# target to build an object file
+Memory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Memory.cpp.o
+.PHONY : Memory.cpp.o
+
+Memory.i: Memory.cpp.i
+.PHONY : Memory.i
+
+# target to preprocess a source file
+Memory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Memory.cpp.i
+.PHONY : Memory.cpp.i
+
+Memory.s: Memory.cpp.s
+.PHONY : Memory.s
+
+# target to generate assembly for a file
+Memory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Memory.cpp.s
+.PHONY : Memory.cpp.s
+
+Model.o: Model.cpp.o
+.PHONY : Model.o
+
+# target to build an object file
+Model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Model.cpp.o
+.PHONY : Model.cpp.o
+
+Model.i: Model.cpp.i
+.PHONY : Model.i
+
+# target to preprocess a source file
+Model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Model.cpp.i
+.PHONY : Model.cpp.i
+
+Model.s: Model.cpp.s
+.PHONY : Model.s
+
+# target to generate assembly for a file
+Model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Model.cpp.s
+.PHONY : Model.cpp.s
+
+Object.o: Object.cpp.o
+.PHONY : Object.o
+
+# target to build an object file
+Object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Object.cpp.o
+.PHONY : Object.cpp.o
+
+Object.i: Object.cpp.i
+.PHONY : Object.i
+
+# target to preprocess a source file
+Object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Object.cpp.i
+.PHONY : Object.cpp.i
+
+Object.s: Object.cpp.s
+.PHONY : Object.s
+
+# target to generate assembly for a file
+Object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Object.cpp.s
+.PHONY : Object.cpp.s
+
 Renderer.o: Renderer.cpp.o
 .PHONY : Renderer.o
 
@@ -289,6 +361,30 @@ Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Renderer.cpp.s
 .PHONY : Renderer.cpp.s
 
+ResourceManager.o: ResourceManager.cpp.o
+.PHONY : ResourceManager.o
+
+# target to build an object file
+ResourceManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/ResourceManager.cpp.o
+.PHONY : ResourceManager.cpp.o
+
+ResourceManager.i: ResourceManager.cpp.i
+.PHONY : ResourceManager.i
+
+# target to preprocess a source file
+ResourceManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/ResourceManager.cpp.i
+.PHONY : ResourceManager.cpp.i
+
+ResourceManager.s: ResourceManager.cpp.s
+.PHONY : ResourceManager.s
+
+# target to generate assembly for a file
+ResourceManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/ResourceManager.cpp.s
+.PHONY : ResourceManager.cpp.s
+
 Shader.o: Shader.cpp.o
 .PHONY : Shader.o
 
@@ -312,6 +408,30 @@ Shader.s: Shader.cpp.s
 Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Shader.cpp.s
 .PHONY : Shader.cpp.s
+
+Window.o: Window.cpp.o
+.PHONY : Window.o
+
+# target to build an object file
+Window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Window.cpp.o
+.PHONY : Window.cpp.o
+
+Window.i: Window.cpp.i
+.PHONY : Window.i
+
+# target to preprocess a source file
+Window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Window.cpp.i
+.PHONY : Window.cpp.i
+
+Window.s: Window.cpp.s
+.PHONY : Window.s
+
+# target to generate assembly for a file
+Window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Window.cpp.s
+.PHONY : Window.cpp.s
 
 app.o: app.cpp.o
 .PHONY : app.o
@@ -381,12 +501,27 @@ help:
 	@echo "... glfw"
 	@echo "... glm"
 	@echo "... imgui"
+	@echo "... Memory.o"
+	@echo "... Memory.i"
+	@echo "... Memory.s"
+	@echo "... Model.o"
+	@echo "... Model.i"
+	@echo "... Model.s"
+	@echo "... Object.o"
+	@echo "... Object.i"
+	@echo "... Object.s"
 	@echo "... Renderer.o"
 	@echo "... Renderer.i"
 	@echo "... Renderer.s"
+	@echo "... ResourceManager.o"
+	@echo "... ResourceManager.i"
+	@echo "... ResourceManager.s"
 	@echo "... Shader.o"
 	@echo "... Shader.i"
 	@echo "... Shader.s"
+	@echo "... Window.o"
+	@echo "... Window.i"
+	@echo "... Window.s"
 	@echo "... app.o"
 	@echo "... app.i"
 	@echo "... app.s"

@@ -1,5 +1,7 @@
 #pragma once
-#include <GLFW/glfw3.h>
+
+#include "Util.h"
+
 class Window {
 public:
     static void framebuffer_size_callback(GLFWwindow*, int,int);

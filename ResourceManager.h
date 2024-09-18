@@ -6,10 +6,10 @@
 
 class Resource {
 public:
-    virtual ~Resource();
-    virtual void load() = 0;
-    virtual void load(const GLenum&, const std::string&) = 0;
-    virtual void load(const std::string&) = 0;
+    virtual ~Resource(){};
+    virtual void load(){};
+    virtual void load(const GLenum&, const std::string&){};
+    virtual void load(const std::string&){};
 private:
 };
 

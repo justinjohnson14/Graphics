@@ -1,13 +1,13 @@
 #include "Shader.h"
 #include <string>
 
-Shader::Shader(std::string vs, std::string fs)
+Shader::Shader(const std::string& vs, const std::string& fs)
 {
-    setShader(GL_VERTEX_SHADER, vs);
-    setShader(GL_FRAGMENT_SHADER, fs);
+    load(GL_VERTEX_SHADER, vs);
+    load(GL_FRAGMENT_SHADER, fs);
 }
 
-void Shader::setShader(const GLuint& type, const std::string& file)
+void Shader::load(const GLuint& type, const std::string& file)
 {
     std::string* src = new std::string(read(file));
     const char* c_src= src->c_str();
@@ -26,7 +26,7 @@ void Shader::setShader(const GLuint& type, const std::string& file)
         return;
     }
 
-    switch (type) 
+    switch (type)
     {
     case GL_VERTEX_SHADER:
         m_vertexID = shader;
