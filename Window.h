@@ -7,7 +7,6 @@ public:
     static void framebuffer_size_callback(GLFWwindow*, int,int);
     static void key_callback(GLFWwindow*, int, int, int);
     void Window::cursor_pos_callback(GLFWwindow*, double, double)
-    void processInput();
 
     void init();
 

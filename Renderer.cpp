@@ -7,11 +7,6 @@ void Renderer::init()
 
 void Renderer::Draw()
 {
-
+    return;
 }
 
-
-void Renderer::NewDrawCall(DrawCall &dc)
-{
-    m_drawQueue.push(&dc);
-}

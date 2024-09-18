@@ -118,8 +118,6 @@ void run()
         previous = current;
         lag += elapsed;
 
-        window->processInput();
-
         while(lag >= MS_PER_UPDATE)
         {
             update();
@@ -127,8 +125,8 @@ void run()
         }
 
 
-        obj1->shader->use();
-        obj1->model->draw();
+        //obj1->shader->use();
+        //obj1->model->draw();
         renderer->Draw();
 
         window->swapBuffers();

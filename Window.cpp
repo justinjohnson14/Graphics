@@ -31,15 +31,6 @@ void Window::init()
     gladLoadGL();
 }
 
-void Window::processInput()
-{
-    if(glfwGetKey(m_windowHandle, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        running = false;
-
-    if(glfwWindowShouldClose(m_windowHandle))
-        running = false;
-}
-
 void Window::swapBuffers()
 {
     glfwSwapBuffers(m_windowHandle);
