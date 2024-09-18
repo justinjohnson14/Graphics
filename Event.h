@@ -5,6 +5,19 @@
 class Event {
 public:
     virtual~ Event();
+
+    const enum eventType {
+        Default,
+        KeyEvent,
+        MouseEvent,
+        WindowResizeEvent,
+    }
+
+    Event(const eventType&, int, int, int, int);
+    Event(const eventType&, double, double);
+
+    int m_key=0, m_scancode=0, m_action=0, m_mods=0;
+    double m_mousex=0, m_mousey=0;
 private:
 };
 

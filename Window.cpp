@@ -53,10 +53,11 @@ void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height
 
 void Window::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-
+    //probably wrong way to pass a sharded pointer 
+    EventHandler::GetInstance()->dispatch(std::make_shared<Event>(Event::eventType::KeyEvent, key, scancode, action, mods));
 }
 
 void Window::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos)
 {
-    
+    EventHandler::GetInstance()->dispatch(std::make_shared<Event>(Event::eventType::KeyEvent, xpos, ypos));
 }

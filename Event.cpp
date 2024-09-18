@@ -1,5 +1,17 @@
 #include "Event.h"
 
+Event::Event(const Event::eventType& type, int key, int scancode, int action, int mods) :
+    m_key(key), m_scancode(scancode), m_action(action), m_mods(mods)
+{
+
+}
+
+Event::Event(const Event::eventType& type, double xpos, double ypos): 
+    m_mousex(xpos), m_mousey(ypos)
+{
+    
+}
+
 EventHandler::EventHandler(std::shared_ptr<Window> window) : 
     m_windowHandle(window)
 {
