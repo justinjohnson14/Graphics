@@ -1,3 +1,4 @@
+#include "Log.h"
 #include "Util.h"
 
 #include "Window.h"
@@ -60,6 +61,7 @@ void update()
 
 void init()
 {
+    Log::init();
     window->init();
     renderer->init();
 }
@@ -89,7 +91,7 @@ void run()
     }
 }
 
-static void initLog()
+void shutdown()
 {
-
+    LOG_INFO("Shutting down...");
 }

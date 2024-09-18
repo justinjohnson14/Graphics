@@ -1,4 +1,5 @@
 #include "Shader.h"
+#include "Log.h"
 #include <string>
 
 Shader::Shader(const std::string& vs, const std::string& fs)
@@ -22,6 +23,7 @@ void Shader::load(const GLuint& type, const std::string& file)
         char infoLog[512];
         glGetShaderInfoLog(shader, 512, NULL, infoLog);
         fprintf(stderr, "Shader compilation error: \n%s\n", infoLog);
+        LOG_WARN("Shader compilation error: {}", infoLog);
         glDeleteShader(shader);
         return;
     }
@@ -50,6 +52,7 @@ std::string Shader::read(const std::string& src)
     if (!file.is_open()) {
         // print error message and return
         std::cerr << "Failed to open file: " << src << std::endl;
+        LOG_ERROR("Failed to open file: {}", src);
         return 0;
     }
 

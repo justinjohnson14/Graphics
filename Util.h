@@ -7,6 +7,7 @@
 #include <GLFW/glfw3.h>
 
 #include <glm/glm.hpp>
+#include "Log.h"
 
 #include <iostream>
 #include <fstream>

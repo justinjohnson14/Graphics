@@ -3,15 +3,15 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = 
+C_DEFINES = -DDEBUG
 
-C_INCLUDES = -I/home/justin/Documents/graphics/_deps/glad-src/include -I/home/justin/Documents/graphics/_deps/imgui-src -I/home/justin/Documents/graphics/_deps/imgui-src/backends -I/home/justin/Documents/graphics/_deps/glfw-src/include -I/home/justin/Documents/graphics/_deps/glm-src
+C_INCLUDES = -I/home/justin/Documents/graphics/./spdlog/include -I/home/justin/Documents/graphics/_deps/glad-src/include -I/home/justin/Documents/graphics/_deps/imgui-src -I/home/justin/Documents/graphics/_deps/imgui-src/backends -I/home/justin/Documents/graphics/_deps/glfw-src/include -I/home/justin/Documents/graphics/_deps/glm-src
 
 C_FLAGS = -std=gnu2x
 
-CXX_DEFINES = 
+CXX_DEFINES = -DDEBUG
 
-CXX_INCLUDES = -I/home/justin/Documents/graphics/_deps/glad-src/include -I/home/justin/Documents/graphics/_deps/imgui-src -I/home/justin/Documents/graphics/_deps/imgui-src/backends -I/home/justin/Documents/graphics/_deps/glfw-src/include -I/home/justin/Documents/graphics/_deps/glm-src
+CXX_INCLUDES = -I/home/justin/Documents/graphics/./spdlog/include -I/home/justin/Documents/graphics/_deps/glad-src/include -I/home/justin/Documents/graphics/_deps/imgui-src -I/home/justin/Documents/graphics/_deps/imgui-src/backends -I/home/justin/Documents/graphics/_deps/glfw-src/include -I/home/justin/Documents/graphics/_deps/glm-src
 
 CXX_FLAGS = -std=gnu++20
 

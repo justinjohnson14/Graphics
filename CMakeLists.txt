@@ -12,7 +12,11 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(imgui-glfw-glad-glm)
 
-add_executable(app app.cpp Shader.cpp Renderer.cpp  Memory.cpp Model.cpp Object.cpp ResourceManager.cpp Window.cpp glad/src/glad.c)
+include_directories(./spdlog/include)
+
+add_definitions(-DDEBUG)
+
+add_executable(app app.cpp Shader.cpp Renderer.cpp  Memory.cpp Model.cpp Object.cpp ResourceManager.cpp Window.cpp Log.cpp glad/src/glad.c)
 
 target_link_libraries(
     app
@@ -28,5 +32,4 @@ target_link_libraries(
     Xinerama
     Xcursor
     assimp
-    spdlog
 )

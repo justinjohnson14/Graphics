@@ -265,6 +265,30 @@ glm/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/glm-build/glm/CMakeFiles/glm.dir/build.make _deps/glm-build/glm/CMakeFiles/glm.dir/build
 .PHONY : glm/fast
 
+Log.o: Log.cpp.o
+.PHONY : Log.o
+
+# target to build an object file
+Log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Log.cpp.o
+.PHONY : Log.cpp.o
+
+Log.i: Log.cpp.i
+.PHONY : Log.i
+
+# target to preprocess a source file
+Log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Log.cpp.i
+.PHONY : Log.cpp.i
+
+Log.s: Log.cpp.s
+.PHONY : Log.s
+
+# target to generate assembly for a file
+Log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/Log.cpp.s
+.PHONY : Log.cpp.s
+
 Memory.o: Memory.cpp.o
 .PHONY : Memory.o
 
@@ -501,6 +525,9 @@ help:
 	@echo "... glfw"
 	@echo "... glm"
 	@echo "... imgui"
+	@echo "... Log.o"
+	@echo "... Log.i"
+	@echo "... Log.s"
 	@echo "... Memory.o"
 	@echo "... Memory.i"
 	@echo "... Memory.s"

@@ -1,10 +1,12 @@
 #include "Window.h"
+#include "Log.h"
+#include <GLFW/glfw3.h>
 
 void Window::init()
 {
     if(!glfwInit())
     {
-        std::cerr << "Failed to initialize GLFW!" << std::endl;
+        LOG_ERROR("Failed to initialize GLFW");
         return;
     }
 
@@ -16,7 +18,7 @@ void Window::init()
 
     if(!m_windowHandle)
     {
-        std::cerr << "Failed to create window!" << std::endl;
+        LOG_ERROR("Failed to create window");
         glfwTerminate();
         return;
     }
@@ -29,6 +31,9 @@ void Window::init()
 void Window::processInput()
 {
     if(glfwGetKey(m_windowHandle, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        running = false;
+
+    if(glfwWindowShouldClose(m_windowHandle))
         running = false;
 }
 
