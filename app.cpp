@@ -1,9 +1,17 @@
 #include "Log.h"
+#include "Object.h"
+#include "ResourceManager.h"
 #include "Util.h"
 
 #include "Window.h"
 
 #include "Renderer.h"
+#include <glad/glad.h>
+#include <glm/detail/qualifier.hpp>
+#include <glm/ext/matrix_clip_space.hpp>
+#include <glm/ext/matrix_float4x4.hpp>
+#include <glm/ext/matrix_transform.hpp>
+#include <memory>
 
 void init();
 void run();
@@ -17,6 +25,8 @@ static void initLog();
 
 std::unique_ptr<Window> window;
 std::unique_ptr<Renderer> renderer;
+std::unique_ptr<ResourceManager> rm;
+std::unique_ptr<Object> obj1;
 
 const double MS_PER_UPDATE = 1.0f;
 
@@ -24,7 +34,30 @@ int main(void)
 {
     window = std::make_unique<Window>();
     renderer = std::make_unique<Renderer>();
+    rm = std::make_unique<ResourceManager>();
+
     init();
+
+    obj1 = std::make_unique<Object>();
+
+    unsigned int shader1 = 1;
+    unsigned int model1 = 2;
+
+    obj1->model = rm->getResource(model1, ResourceManager::ModelResource);
+    obj1->model->load("./res/models/Truss/Truss.obj");
+
+    obj1->shader = rm->getResource(shader1, ResourceManager::ShaderResource);
+    obj1->shader->load(GL_VERTEX_SHADER, "./res/shaders/vertex.glsl");
+    obj1->shader->load(GL_FRAGMENT_SHADER, "./res/shaders/vertex.glsl");
+    obj1->shader->compile();
+
+    glm::mat4 m = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
+    glm::mat4 v = glm::mat4(1.0f);
+    glm::mat4 p = glm::mat4(1.0f);
+
+    p = glm::ortho(0.0f, (float)window->SCR_WIDTH, (float)window->SCR_HEIGHT, 0.0f);
+
+    unsigned int modelLoc = glGetUniformLocation(obj1->shaderID, "model");
 
     //glm::mat4 model = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
     //glm::mat4 view = glm::mat4(1.0f);

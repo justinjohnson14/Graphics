@@ -10,6 +10,8 @@ public:
     virtual void load(){};
     virtual void load(const GLenum&, const std::string&){};
     virtual void load(const std::string&){};
+    virtual void compile();
+    virtual void use();
 private:
 };
 
@@ -21,9 +23,9 @@ public:
         ShaderResource,
     };
 
-    std::map<std::string, std::shared_ptr<Resource>> loadedResources;
+    std::map<unsigned int, std::shared_ptr<Resource>> loadedResources;
     std::map<std::string, unsigned int> instanceCount;
 
-    std::shared_ptr<Resource> getResource(const std::string&, const resourceType&);
+    std::shared_ptr<Resource> getResource(const unsigned int&, const resourceType&);
 private:
 };

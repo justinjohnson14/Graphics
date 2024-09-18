@@ -5,15 +5,15 @@
 
 #include <memory>
 
-std::shared_ptr<Resource> ResourceManager::getResource(const std::string& file, const resourceType& res)
+std::shared_ptr<Resource> ResourceManager::getResource(const unsigned int& res, const resourceType& resType)
 {
-    if(loadedResources.count(file))
+    if(loadedResources.count(res))
     {
-        return loadedResources.at(file);
+        return loadedResources.at(res);
     }
 
     std::shared_ptr<Resource> ptr;
-    switch (res) {
+    switch (resType) {
     case ModelResource:
         ptr = std::make_shared<Model>();
     case ShaderResource:
@@ -22,7 +22,7 @@ std::shared_ptr<Resource> ResourceManager::getResource(const std::string& file, 
         ptr = nullptr;
     }
 
-    loadedResources.insert({file,ptr});
+    loadedResources.insert({res,ptr});
 
     return ptr;
 }
