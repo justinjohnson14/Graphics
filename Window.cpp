@@ -25,6 +25,9 @@ void Window::init()
 
     glfwMakeContextCurrent(m_windowHandle);
     glfwSetFramebufferSizeCallback(m_windowHandle, framebuffer_size_callback);
+    glfwSetKeyCallback(m_windowHandle, key_callback);
+    glfwSetInputMode(m_windowHandle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetCursorPosCallback(m_windowHandle, cursor_pos_callback);
     gladLoadGL();
 }
 
@@ -39,11 +42,21 @@ void Window::processInput()
 
 void Window::swapBuffers()
 {
-    glfwPollEvents();
     glfwSwapBuffers(m_windowHandle);
+    glfwPollEvents();
 }
 
 void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0,0, width, height);
+}
+
+void Window::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+
+}
+
+void Window::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    
 }

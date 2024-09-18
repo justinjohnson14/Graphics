@@ -51,7 +51,7 @@ public:
      * executed on its instance.
      */
 
-    static void add(std::shared_ptr<EventListener>);
+    static void addListener(std::shared_ptr<EventListener>);
     static void dispatch(const Event&);
 
     static std::vector<EventListener> m_listeners;

@@ -31,7 +31,7 @@ static void EventHandler::dispatch(const Event& event)
     }
 }
 
-static void EventHandler::add(std::shared_ptr<EventListener> listener)
+static void EventHandler::addListener(std::shared_ptr<EventListener> listener)
 {
     s_listeners.insert(listener);
 }
