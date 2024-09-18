@@ -17,9 +17,11 @@ public:
 
     void load(const GLuint&, const std::string&) override;
 
-    void compile();
+    unsigned int getID() override {return ID;}
 
-    void use();
+    void compile() override;
+
+    void use() override;
 
     unsigned int ID;
 private:

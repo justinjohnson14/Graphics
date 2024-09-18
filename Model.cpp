@@ -9,6 +9,7 @@
 #include <glad/glad.h>
 #include <glm/ext/vector_float2.hpp>
 #include <iostream>
+#include <string>
 #include <vector>
 
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int>indicies, std::vector<Texture> textures) :
@@ -41,6 +42,19 @@ void Mesh::setupMesh()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texCoords));
 
     glBindVertexArray(0);
+}
+
+void Mesh::draw()
+{
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, indicies.size(), GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
+}
+
+void Model::draw()
+{
+    for(unsigned int i = 0; i < meshes.size(); i++)
+        meshes[i].draw();
 }
 
 void Model::load(const std::string& file)

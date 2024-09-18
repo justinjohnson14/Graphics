@@ -27,7 +27,7 @@ public:
     std::vector<Texture> textures;
 
     Mesh(std::vector<Vertex>, std::vector<unsigned int>, std::vector<Texture>);
-    void Draw();
+    void draw();
 private:
     unsigned int VAO, VBO, EBO;
     void setupMesh();
@@ -39,6 +39,7 @@ public:
     void load(const std::string&) override;
     void processNode(aiNode*,const aiScene*);
     Mesh processMesh(aiMesh*, const aiScene*);
+    void draw();
 
     std::vector<Mesh> meshes;
 };

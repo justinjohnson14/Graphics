@@ -11,6 +11,7 @@
 #include <glm/ext/matrix_clip_space.hpp>
 #include <glm/ext/matrix_float4x4.hpp>
 #include <glm/ext/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <memory>
 
 void init();
@@ -38,15 +39,16 @@ int main(void)
 
     init();
 
+    //This needs to be taken care of!!
     obj1 = std::make_unique<Object>();
 
     unsigned int shader1 = 1;
     unsigned int model1 = 2;
 
-    obj1->model = rm->getResource(model1, ResourceManager::ModelResource);
+    obj1->model = rm->getResource("model1", ResourceManager::ModelResource);
     obj1->model->load("./res/models/Truss/Truss.obj");
 
-    obj1->shader = rm->getResource(shader1, ResourceManager::ShaderResource);
+    obj1->shader = rm->getResource("shader1", ResourceManager::ShaderResource);
     obj1->shader->load(GL_VERTEX_SHADER, "./res/shaders/vertex.glsl");
     obj1->shader->load(GL_FRAGMENT_SHADER, "./res/shaders/vertex.glsl");
     obj1->shader->compile();
@@ -57,7 +59,13 @@ int main(void)
 
     p = glm::ortho(0.0f, (float)window->SCR_WIDTH, (float)window->SCR_HEIGHT, 0.0f);
 
-    unsigned int modelLoc = glGetUniformLocation(obj1->shaderID, "model");
+    unsigned int modelLoc = glGetUniformLocation(obj1->shader->getID(), "model");
+    unsigned int viewLoc = glGetUniformLocation(obj1->shader->getID(), "view");
+    unsigned int projLoc = glGetUniformLocation(obj1->shader->getID(), "projection");
+
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(m));
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(v));
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(p));
 
     //glm::mat4 model = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
     //glm::mat4 view = glm::mat4(1.0f);
@@ -118,6 +126,9 @@ void run()
             lag -= MS_PER_UPDATE;
         }
 
+
+        obj1->shader->use();
+        obj1->model->draw();
         renderer->Draw();
 
         window->swapBuffers();

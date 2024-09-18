@@ -5,7 +5,7 @@
 
 #include <memory>
 
-std::shared_ptr<Resource> ResourceManager::getResource(const unsigned int& res, const resourceType& resType)
+std::shared_ptr<Resource> ResourceManager::getResource(const std::string& res, const resourceType& resType)
 {
     if(loadedResources.count(res))
     {
