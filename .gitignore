@@ -42,3 +42,4 @@ Makefile
 libs
 logs
 tools
+.vscode
