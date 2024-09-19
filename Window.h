@@ -16,6 +16,7 @@ public:
     static bool running;
 
     void swapBuffers();
-private:
+
     static GLFWwindow* m_windowHandle;
+private:
 };

@@ -11,7 +11,7 @@ class Event {
 public:
     virtual~ Event();
 
-    const enum eventType {
+    enum eventType {
         Default,
         KeyEvent,
         MouseEvent,

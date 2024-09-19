@@ -8,8 +8,8 @@ Object::Object()
 
 void Object::update()
 {
-    for (auto e : m_eventListener->getEvents())
+    while(m_eventListener->getEvents().size())
     {
-        //Do something with events
+        m_eventListener->getEvents().pop();
     }
 }
