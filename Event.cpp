@@ -1,19 +1,13 @@
 #include "Event.h"
 
-Event::Event(const Event::eventType& type, int key, int scancode, int action, int mods) :
-    m_key(key), m_scancode(scancode), m_action(action), m_mods(mods)
+Event::Event(const Event::eventType& type, int key, int scancode, int action, int mods)
+    : m_key(key), m_scancode(scancode), m_action(action), m_mods(mods)
 {
-
+    EventHandler::GetInstance()->dispatch(*this);
 }
 
-Event::Event(const Event::eventType& type, double xpos, double ypos): 
-    m_mousex(xpos), m_mousey(ypos)
-{
-    
-}
-
-EventHandler::EventHandler(std::shared_ptr<Window> window) : 
-    m_windowHandle(window)
+Event::Event(const Event::eventType& type, double xpos, double ypos)
+    : m_mousex(xpos), m_mousey(ypos)
 {
 
 }
@@ -23,7 +17,7 @@ EventHandler* EventHandler::s_instance = nullptr;
 /**
  * Static methods should be defined outside the class.
  */
-EventHandler *EventHandler::GetInstance(std::shared_ptr<Window> value = nullptr)
+EventHandler *EventHandler::GetInstance(Window* value)
 {
     /**
      * This is a safer way to create an instance. instance = new Singleton is
@@ -35,7 +29,7 @@ EventHandler *EventHandler::GetInstance(std::shared_ptr<Window> value = nullptr)
     return s_instance;
 }
 
-static void EventHandler::dispatch(const Event& event)
+void EventHandler::dispatch(const Event event)
 {
     for(auto l : m_listeners)
     {
@@ -43,9 +37,9 @@ static void EventHandler::dispatch(const Event& event)
     }
 }
 
-static void EventHandler::addListener(std::shared_ptr<EventListener> listener)
+void EventHandler::addListener(EventListener* listener)
 {
-    s_listeners.insert(listener);
+    m_listeners.push_back(listener);
 }
 
 

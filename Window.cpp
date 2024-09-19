@@ -2,6 +2,8 @@
 #include "Log.h"
 #include <GLFW/glfw3.h>
 
+#include "Event.h"
+
 void Window::init()
 {
     if(!glfwInit())
@@ -29,6 +31,8 @@ void Window::init()
     glfwSetInputMode(m_windowHandle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(m_windowHandle, cursor_pos_callback);
     gladLoadGL();
+
+    running = true;
 }
 
 void Window::swapBuffers()
@@ -44,11 +48,15 @@ void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height
 
 void Window::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-    //probably wrong way to pass a sharded pointer 
-    EventHandler::GetInstance()->dispatch(std::make_shared<Event>(Event::eventType::KeyEvent, key, scancode, action, mods));
+    //probably wrong way to pass a sharded pointer
+    if(key==GLFW_KEY_ESCAPE && action==GLFW_KEY_DOWN)
+    {
+        glfwSetWindowShouldClose(m_windowHandle, GLFW_TRUE);
+        running = false;
+    }
 }
 
 void Window::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos)
 {
-    EventHandler::GetInstance()->dispatch(std::make_shared<Event>(Event::eventType::KeyEvent, xpos, ypos));
+
 }

@@ -2,6 +2,11 @@
 
 #include "Window.h"
 
+#include <queue>
+#include <vector>
+
+class EventListener;
+
 class Event {
 public:
     virtual~ Event();
@@ -11,7 +16,7 @@ public:
         KeyEvent,
         MouseEvent,
         WindowResizeEvent,
-    }
+    };
 
     Event(const eventType&, int, int, int, int);
     Event(const eventType&, double, double);
@@ -35,7 +40,7 @@ class EventHandler
      */
 
 protected:
-    EventHandler(std::shared_ptr<Window> window): m_windowHandle(window);
+    EventHandler(Window* window): m_windowHandle(window)
     {
     }
 
@@ -58,16 +63,17 @@ public:
      * object stored in the static field.
      */
 
-    static EventHandler *GetInstance(std::shared_ptr<Window>);
+    static EventHandler *GetInstance(Window* value = nullptr);
     /**
      * Finally, any singleton should define some business logic, which can be
      * executed on its instance.
      */
 
-    static void addListener(std::shared_ptr<EventListener>);
+    static void addListener(EventListener*);
     static void dispatch(const Event&);
 
-    static std::vector<EventListener> m_listeners;
+    static std::vector<EventListener*> m_listeners;
+    Window* m_windowHandle;
 };
 
 class EventListener{
@@ -77,4 +83,3 @@ public:
 private:
     std::queue<Event> m_eventQueue;
 };
-

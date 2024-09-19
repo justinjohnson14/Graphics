@@ -25,9 +25,9 @@ public:
         ShaderResource,
     };
 
-    std::map<std::string, std::shared_ptr<Resource>> loadedResources;
+    std::map<std::string, Resource*> loadedResources;
     std::map<std::string, unsigned int> instanceCount;
 
-    std::shared_ptr<Resource> getResource(const std::string&, const resourceType&);
+    Resource* getResource(const std::string&, const resourceType&);
 private:
 };

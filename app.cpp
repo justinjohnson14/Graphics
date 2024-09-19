@@ -24,23 +24,23 @@ void update();
 static void initLog();
 
 
-std::unique_ptr<Window> window;
-std::unique_ptr<Renderer> renderer;
-std::unique_ptr<ResourceManager> rm;
-std::unique_ptr<Object> obj1;
+Window* window;
+Renderer* renderer;
+ResourceManager* rm;
+Object* obj1;
 
 const double MS_PER_UPDATE = 1.0f;
 
 int main(void)
 {
-    window = std::make_unique<Window>();
-    renderer = std::make_unique<Renderer>();
-    rm = std::make_unique<ResourceManager>();
+    window = new Window();
+    renderer = new Renderer();
+    rm = new ResourceManager();
 
     init();
 
     //This needs to be taken care of!!
-    obj1 = std::make_unique<Object>();
+    obj1 = new Object();
 
     unsigned int shader1 = 1;
     unsigned int model1 = 2;

@@ -3,7 +3,7 @@
 
 Object::Object()
 {
-    EventHandler::GetInstance()->add(m_eventListener);
+    EventHandler::GetInstance()->addListener(m_eventListener);
 }
 
 void Object::update()
