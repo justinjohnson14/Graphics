@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.17)
 
 project(app)
 
-set(CMAKE_C_STANDARD 23)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_COMPILER ${CPP_COMPILER})
 
 FetchContent_Declare(
     imgui-glfw-glad-glm
@@ -16,7 +16,17 @@ include_directories(./spdlog/include)
 
 add_definitions(-DDEBUG)
 
-add_executable(app app.cpp Shader.cpp Renderer.cpp  Memory.cpp Model.cpp Object.cpp ResourceManager.cpp Window.cpp Log.cpp glad/src/glad.c)
+add_executable(app)
+target_sources(app PUBLIC
+    app.cpp
+    Renderer.cpp
+    Memory.cpp
+    Object.cpp
+    Window.cpp
+    Log.cpp
+    ResourceManager.cpp
+    glad/src/glad.c
+)
 
 target_link_libraries(
     app

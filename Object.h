@@ -17,7 +17,6 @@ public:
     void update();
 
     Resource* model;
-    Resource* shader;
-    EventListener* m_eventListener = new EventListener();
+    //Resource* shader;
 private:
 };

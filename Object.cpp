@@ -3,13 +3,11 @@
 
 Object::Object()
 {
-    EventHandler::GetInstance()->addListener(m_eventListener);
+    model = new Model();
+
+    model->load("./res/models/Truss/Truss.obj");
 }
 
 void Object::update()
 {
-    while(m_eventListener->getEvents().size())
-    {
-        m_eventListener->getEvents().pop();
-    }
 }
