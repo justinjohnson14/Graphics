@@ -49,8 +49,6 @@ void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height
 
 void Window::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-    LOG_INFO("Key: {0}, Scancode: {1}, Action: {2}, Mods: {3}", key, scancode, action, mods);
-    //probably wrong way to pass a sharded pointer
     if(key==GLFW_KEY_ESCAPE && action==GLFW_PRESS)
     {
         glfwSetWindowShouldClose(m_windowHandle, GLFW_TRUE);

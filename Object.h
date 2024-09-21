@@ -2,6 +2,7 @@
 
 #include "Model.h"
 #include "Event.h"
+#include "Shader.h"
 
 #include <glm/glm.hpp>
 #include <memory>
@@ -16,6 +17,6 @@ public:
     void update();
 
     Model* model;
-    //Resource* shader;
+    Shader* shader;
 private:
 };

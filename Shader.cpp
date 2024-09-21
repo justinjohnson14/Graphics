@@ -1,5 +1,6 @@
 #include "Shader.h"
 #include "Log.h"
+#include <glad/glad.h>
 #include <string>
 
 Shader::Shader(const std::string& vs, const std::string& fs)
@@ -74,6 +75,18 @@ void Shader::compile()
     glAttachShader(ID, m_vertexID);
     glAttachShader(ID, m_fragmentID);
     glLinkProgram(ID);
+    GLint succsess;
+    glGetShaderiv(ID, GL_LINK_STATUS, &succsess);
+    if(!succsess)
+    {
+        char infoLog[512];
+        glGetShaderInfoLog(ID, 512, NULL, infoLog);
+        fprintf(stderr, "Shader link error: \n%s\n", infoLog);
+        LOG_WARN("Shader compilation error: {}", infoLog);
+        glDeleteShader(ID);
+        return;
+    }
+    glUseProgram(0);
     return;
 }
 

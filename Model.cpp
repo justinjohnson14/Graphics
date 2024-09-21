@@ -1,4 +1,5 @@
 #include "Model.h"
+#include "Log.h"
 
 #include <assimp/Importer.hpp>
 #include <assimp/mesh.h>
@@ -61,10 +62,10 @@ void Model::load(const std::string& file)
 {
     Assimp::Importer importer;
 
-    const aiScene* scene = importer.ReadFile(file, aiProcess_Triangulate);
+    const aiScene* scene = importer.ReadFile(file, aiProcess_Triangulate | aiProcess_FlipUVs);
 
-    if(nullptr == scene)
-        std::cerr << "Error importing file: " + file << std::endl;
+    if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
+        LOG_ERROR("Error importing scene: {}", file);
 
 
     processNode(scene->mRootNode, scene);

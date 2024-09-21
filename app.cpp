@@ -11,7 +11,9 @@
 #include <glm/ext/matrix_float4x4.hpp>
 #include <glm/ext/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/trigonometric.hpp>
 #include <memory>
+#include <vector>
 
 void init();
 void run();
@@ -33,52 +35,42 @@ int main(void)
 {
     window = new Window();
     renderer = new Renderer();
-    //rm = new ResourceManager();
 
     init();
 
-    //This needs to be taken care of!!
     obj1 = new Object();
 
-    unsigned int shader1 = 1;
-    unsigned int model1 = 2;
-
-    //obj1->model = rm->getResource("model1", ResourceManager::ModelResource);
-    //obj1->model->load("./res/models/Truss/Truss.obj");
-
-    //obj1->shader = rm->getResource("shader1", ResourceManager::ShaderResource);
-    //obj1->shader->load(GL_VERTEX_SHADER, "./res/shaders/vertex.glsl");
-    //obj1->shader->load(GL_FRAGMENT_SHADER, "./res/shaders/vertex.glsl");
-    //obj1->shader->compile();
-
-    glm::mat4 m = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
+    glm::mat4 m = glm::mat4(1.0f);
     glm::mat4 v = glm::mat4(1.0f);
     glm::mat4 p = glm::mat4(1.0f);
 
-    p = glm::ortho(0.0f, (float)window->SCR_WIDTH, (float)window->SCR_HEIGHT, 0.0f);
+    obj1->shader->use();
+    std::vector<glm::vec4> test;
+    m = glm::rotate(m, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+    v = glm::translate(v, glm::vec3(0.0f, 0.0f, -5.0f));
+    p = glm::perspective(glm::radians(45.0f), (float)window->SCR_WIDTH/(float)window->SCR_HEIGHT, 0.1f, 100.0f);
+    /*
+    for(auto i : obj1->model->meshes)
+    {
+        for(auto j : i.vertices)
+        {
+            test.push_back(p*v*m*glm::vec4(j.position, 1.0f));
+        }
+    }
 
-    //unsigned int modelLoc = glGetUniformLocation(obj1->shader->getID(), "model");
-    //unsigned int viewLoc = glGetUniformLocation(obj1->shader->getID(), "view");
-    //unsigned int projLoc = glGetUniformLocation(obj1->shader->getID(), "projection");
+    for(auto i : test)
+    {
+        LOG_INFO("{0}, {1}, {2}, {3}", i[0], i[1], i[2], i[3]);
+    }
+    */
 
-    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(m));
-    //glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(v));
-    //glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(p));
+    unsigned int modelLoc = glGetUniformLocation(obj1->shader->getID(), "model");
+    unsigned int viewLoc = glGetUniformLocation(obj1->shader->getID(), "view");
+    unsigned int projLoc = glGetUniformLocation(obj1->shader->getID(), "projection");
 
-    //glm::mat4 model = glm::mat4(glm::translate(glm::mat4(1.0f), glm::vec3(300, 300, 0)));
-    //glm::mat4 view = glm::mat4(1.0f);
-    //glm::mat4 projection = glm::mat4(1.0f);
-
-    //model = glm::scale(model, glm::vec3(10.0f, 10.0f, 0.0f));
-
-    //projection = glm::ortho(0.0f, (float)SCR_WIDTH, (float)SCR_HEIGHT,0.0f);
-
-    //unsigned int modelLoc = glGetUniformLocation(shader1->ID, "model");
-    //unsigned int viewLoc = glGetUniformLocation(shader1->ID, "view");
-    //unsigned int projectionLoc = glGetUniformLocation(shader1->ID, "projection");
-    //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-    //glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-    //glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(m));
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(v));
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(p));
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -95,6 +87,7 @@ double getCurrentTime()
 
 void update()
 {
+    obj1->update();
     return;
 }
 
@@ -103,6 +96,7 @@ void init()
     Log::init();
     window->init();
     renderer->init();
+    glEnable(GL_DEPTH_TEST);
 }
 
 void run()
@@ -111,6 +105,8 @@ void run()
     double lag = 0.0;
     while (window->running)
     {
+        glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         double current = getCurrentTime();
         double elapsed = current - previous;
         previous = current;
@@ -121,8 +117,6 @@ void run()
             update();
             lag -= MS_PER_UPDATE;
         }
-
-
         //obj1->shader->use();
         //obj1->model->draw();
         renderer->Draw();
