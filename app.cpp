@@ -1,6 +1,5 @@
 #include "Log.h"
 #include "Object.h"
-#include "ResourceManager.h"
 #include "Util.h"
 
 #include "Window.h"
@@ -26,7 +25,6 @@ static void initLog();
 
 Window* window;
 Renderer* renderer;
-ResourceManager* rm;
 Object* obj1;
 
 const double MS_PER_UPDATE = 1.0f;

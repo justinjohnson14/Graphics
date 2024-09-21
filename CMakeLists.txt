@@ -21,10 +21,11 @@ target_sources(app PUBLIC
     app.cpp
     Renderer.cpp
     Memory.cpp
+    Model.cpp
+    Shader.cpp
     Object.cpp
     Window.cpp
     Log.cpp
-    ResourceManager.cpp
     glad/src/glad.c
 )
 

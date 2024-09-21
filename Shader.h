@@ -1,7 +1,5 @@
 #pragma once
 
-#include "ResourceManager.h"
-
 #include <glad/glad.h>
 
 #include <sstream>
@@ -9,19 +7,18 @@
 #include <fstream>
 #include <iostream>
 
-class Shader : public Resource{
+class Shader{
 public:
-    Shader()=default;
     Shader(const std::string&, const std::string&);
 
 
-    void load(const GLuint&, const std::string&) override;
+    void load(const GLuint&, const std::string&);
 
-    unsigned int getID() override {return ID;}
+    unsigned int getID() {return ID;}
 
-    void compile() override;
+    void compile();
 
-    void use() override;
+    void use();
 
     unsigned int ID;
 private:

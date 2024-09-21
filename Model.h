@@ -1,5 +1,4 @@
 #pragma once
-#include "ResourceManager.h"
 
 #include <assimp/mesh.h>
 #include <assimp/scene.h>
@@ -33,10 +32,9 @@ private:
     void setupMesh();
 };
 
-class Model : public Resource{
+class Model{
 public:
-    Model()=default;
-    void load(const std::string&) override;
+    void load(const std::string&);
     void processNode(aiNode*,const aiScene*);
     Mesh processMesh(aiMesh*, const aiScene*);
     void draw();

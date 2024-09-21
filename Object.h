@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Model.h"
-#include "ResourceManager.h"
 #include "Event.h"
 
 #include <glm/glm.hpp>
@@ -16,7 +15,7 @@ public:
 
     void update();
 
-    Resource* model;
+    Model* model;
     //Resource* shader;
 private:
 };
