@@ -16,9 +16,9 @@ Object::Object()
 void Object::update()
 {
     shader->use();
-    //odel->draw();
+    model->draw();
 
-
+    /*
     unsigned int VAO, VBO, EBO;
 
     float vertices[] = {
@@ -81,4 +81,5 @@ void Object::update()
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
     glDeleteVertexArrays(1, &VAO);
+    */
 }
