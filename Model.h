@@ -19,6 +19,25 @@ struct Texture {
     std::string type;
 };
 
+enum ShapeType {
+    Circle,
+    Ellipse,
+    Square,
+    Rectangle,
+    Triangle,
+    Rhombus,
+    Trapezium,
+    Pentagone,
+    Hexagone,
+    Octagon,
+    Cylinder,
+    Cone,
+    Cube,
+    RectangularPrism,
+    Pyramid,
+    Sphere
+};
+
 class Mesh {
 public:
     std::vector<Vertex> vertices;
@@ -34,6 +53,8 @@ private:
 
 class Model{
 public:
+    Model(const std::string& file){load(file);}
+    Model(const ShapeType&);
     void load(const std::string&);
     void processNode(aiNode*,const aiScene*);
     Mesh processMesh(aiMesh*, const aiScene*);

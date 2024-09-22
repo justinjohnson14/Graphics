@@ -3,20 +3,40 @@
 #include "Model.h"
 #include "Event.h"
 #include "Shader.h"
+#include "Camera.h"
 
 #include <glm/glm.hpp>
 #include <memory>
+#include <pthread.h>
+
+class Transform{
+public:
+    glm::vec3 position;
+    glm::vec3 rotation;
+    glm::vec3 scale;
+};
 
 class Object {
 public:
     Object();
-    glm::vec3 transform;
+    Transform* transform;
     unsigned int layer;
     unsigned int scene;
 
     void update();
+    void draw(Camera*);
 
     Model* model;
     Shader* shader;
+
+    glm::mat4 m_model = glm::mat4(1.0f);
+
+    glm::vec3 m_position;
+    glm::vec3 m_velocity;
+    glm::vec3 m_acceleration;
+    glm::vec3 m_force;
+    float m_mass = 0.5f;
+
+    //std::vector<Component*> components;
 private:
 };

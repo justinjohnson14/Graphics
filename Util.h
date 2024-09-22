@@ -1,5 +1,6 @@
 #pragma once
 
+const double MS_PER_UPDATE = 1.0f;
 
 #define GLAD_GL_IMPLEMENTATION
 #include <glad/glad.h>

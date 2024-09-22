@@ -26,6 +26,7 @@ target_sources(app PUBLIC
     Object.cpp
     Window.cpp
     Log.cpp
+    Camera.cpp
     glad/src/glad.c
 )
 

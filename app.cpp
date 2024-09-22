@@ -1,4 +1,5 @@
 #include "Log.h"
+#include "Model.h"
 #include "Object.h"
 #include "Util.h"
 
@@ -12,8 +13,7 @@
 #include <glm/ext/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/trigonometric.hpp>
-#include <memory>
-#include <vector>
+#include "Camera.h"
 
 void init();
 void run();
@@ -27,9 +27,8 @@ static void initLog();
 
 Window* window;
 Renderer* renderer;
-Object* obj1;
-
-const double MS_PER_UPDATE = 1.0f;
+Object* obj1, *obj2;
+Camera* camera;
 
 int main(void)
 {
@@ -39,38 +38,10 @@ int main(void)
     init();
 
     obj1 = new Object();
-
-    glm::mat4 m = glm::mat4(1.0f);
-    glm::mat4 v = glm::mat4(1.0f);
-    glm::mat4 p = glm::mat4(1.0f);
-
-    obj1->shader->use();
-    std::vector<glm::vec4> test;
-    m = glm::rotate(m, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-    v = glm::translate(v, glm::vec3(0.0f, 0.0f, -5.0f));
-    p = glm::perspective(glm::radians(45.0f), (float)window->SCR_WIDTH/(float)window->SCR_HEIGHT, 0.1f, 100.0f);
-    /*
-    for(auto i : obj1->model->meshes)
-    {
-        for(auto j : i.vertices)
-        {
-            test.push_back(p*v*m*glm::vec4(j.position, 1.0f));
-        }
-    }
-
-    for(auto i : test)
-    {
-        LOG_INFO("{0}, {1}, {2}, {3}", i[0], i[1], i[2], i[3]);
-    }
-    */
-
-    unsigned int modelLoc = glGetUniformLocation(obj1->shader->getID(), "model");
-    unsigned int viewLoc = glGetUniformLocation(obj1->shader->getID(), "view");
-    unsigned int projLoc = glGetUniformLocation(obj1->shader->getID(), "projection");
-
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(m));
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(v));
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(p));
+    obj2 = new Object();
+    camera = new Camera(window);
+    obj1->model = new Model("./res/models/backpack/backpack.obj");
+    obj2->model = new Model(ShapeType::Circle);
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -88,7 +59,7 @@ double getCurrentTime()
 void update()
 {
     obj1->update();
-    return;
+    obj2->update();
 }
 
 void init()
@@ -103,6 +74,7 @@ void run()
 {
     double previous = getCurrentTime();
     double lag = 0.0;
+    obj1->m_force = glm::vec3(1.5f, 0.0f, 0.0f);
     while (window->running)
     {
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
@@ -119,7 +91,8 @@ void run()
         }
         //obj1->shader->use();
         //obj1->model->draw();
-        renderer->Draw();
+        obj1->draw(camera);
+        obj2->draw(camera);
 
         window->swapBuffers();
     }

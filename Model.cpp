@@ -9,7 +9,6 @@
 #include <cstddef>
 #include <glad/glad.h>
 #include <glm/ext/vector_float2.hpp>
-#include <iostream>
 #include <string>
 #include <vector>
 
@@ -50,6 +49,11 @@ void Mesh::draw()
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, indicies.size(), GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
+}
+
+Model::Model(const ShapeType&)
+{
+
 }
 
 void Model::draw()
