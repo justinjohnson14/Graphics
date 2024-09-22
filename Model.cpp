@@ -51,9 +51,9 @@ void Mesh::draw()
         glBindVertexArray(0);
 }
 
-Model::Model(const ShapeType&)
+Model::Model(const ShapeType& type)
+    :m_shapeType(type)
 {
-
 }
 
 void Model::draw()

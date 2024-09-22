@@ -19,6 +19,7 @@ public:
 class Object {
 public:
     Object();
+    ~Object();
     Transform* transform;
     unsigned int layer;
     unsigned int scene;
@@ -36,6 +37,10 @@ public:
     glm::vec3 m_acceleration;
     glm::vec3 m_force;
     float m_mass = 0.5f;
+
+    glm::vec3 m_lightPosition;
+    glm::vec3 m_lightColor;
+    glm::vec3 m_objectColor;
 
     //std::vector<Component*> components;
 private:

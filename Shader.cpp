@@ -76,7 +76,7 @@ void Shader::compile()
     glAttachShader(ID, m_fragmentID);
     glLinkProgram(ID);
     GLint succsess;
-    glGetShaderiv(ID, GL_LINK_STATUS, &succsess);
+    glGetProgramiv(ID, GL_LINK_STATUS, &succsess);
     if(!succsess)
     {
         char infoLog[512];

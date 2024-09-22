@@ -17,6 +17,7 @@
 
 void init();
 void run();
+void shutdown();
 
 unsigned int shader(const char*, const char*);
 const char* readFile(const char*);
@@ -40,12 +41,14 @@ int main(void)
     obj1 = new Object();
     obj2 = new Object();
     camera = new Camera(window);
+
     obj1->model = new Model("./res/models/backpack/backpack.obj");
     obj2->model = new Model(ShapeType::Circle);
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     run();
+    shutdown();
     return 0;
 }
 
@@ -74,7 +77,7 @@ void run()
 {
     double previous = getCurrentTime();
     double lag = 0.0;
-    obj1->m_force = glm::vec3(1.5f, 0.0f, 0.0f);
+    obj1->m_force = glm::vec3(1.0f, 0.0f, 0.0f);
     while (window->running)
     {
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
@@ -100,5 +103,7 @@ void run()
 
 void shutdown()
 {
+    delete obj1;
+    delete obj2;
     LOG_INFO("Shutting down...");
 }

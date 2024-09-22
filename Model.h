@@ -61,4 +61,5 @@ public:
     void draw();
 
     std::vector<Mesh> meshes;
+    ShapeType m_shapeType;
 };
