@@ -1,7 +1,7 @@
 include(FetchContent)
 cmake_minimum_required(VERSION 3.17)
 
-project(app)
+project(GameEngine)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_COMPILER ${CPP_COMPILER})
@@ -15,6 +15,21 @@ FetchContent_MakeAvailable(imgui-glfw-glad-glm)
 include_directories(./spdlog/include)
 
 add_definitions(-DDEBUG)
+
+add_library(GameEngine)
+
+target_sources(GameEngine PUBLIC
+    app.cpp
+    Renderer.cpp
+    Memory.cpp
+    Model.cpp
+    Shader.cpp
+    Object.cpp
+    Window.cpp
+    Log.cpp
+    Camera.cpp
+    glad/src/glad.c
+)
 
 add_executable(app)
 target_sources(app PUBLIC
@@ -45,3 +60,7 @@ target_link_libraries(
     Xcursor
     assimp
 )
+
+add_subdirectory(demo)
+
+
