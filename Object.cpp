@@ -8,22 +8,17 @@
 
 Object::Object()
 {
-    shader = new Shader("./res/shaders/vertex.glsl", "./res/shaders/fragment.glsl");
-    shader->compile();
+    //m_lightPosition = glm::vec3(1.2f, 1.0f, 2.0f);
+    //m_lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+    //m_objectColor = glm::vec3(0.0f, 0.52f, 0.15f);
 
-    shader->use();
+    //unsigned int lightPos = glGetUniformLocation(shader->getID(), "lightPos");
+    //unsigned int lightColor = glGetUniformLocation(shader->getID(), "lightColor");
+    //unsigned int objColor = glGetUniformLocation(shader->getID(), "objectColor");
 
-    m_lightPosition = glm::vec3(1.2f, 1.0f, 2.0f);
-    m_lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
-    m_objectColor = glm::vec3(0.0f, 0.52f, 0.15f);
-
-    unsigned int lightPos = glGetUniformLocation(shader->getID(), "lightPos");
-    unsigned int lightColor = glGetUniformLocation(shader->getID(), "lightColor");
-    unsigned int objColor = glGetUniformLocation(shader->getID(), "objectColor");
-
-    glUniform3fv(lightPos, 1, glm::value_ptr(m_lightPosition));
-    glUniform3fv(lightColor, 1, glm::value_ptr(m_lightColor));
-    glUniform3fv(objColor, 1, glm::value_ptr(m_objectColor));
+    //glUniform3fv(lightPos, 1, glm::value_ptr(m_lightPosition));
+    //glUniform3fv(lightColor, 1, glm::value_ptr(m_lightColor));
+    //glUniform3fv(objColor, 1, glm::value_ptr(m_objectColor));
 }
 
 Object::~Object()

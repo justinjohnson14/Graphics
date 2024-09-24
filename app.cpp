@@ -42,6 +42,9 @@ int main(void)
     obj2 = new Object();
     camera = new Camera(window);
 
+    obj2->shader = new Shader("./res/shaders/vertex.glsl", "./res/shaders/fragment.glsl");
+    obj2->shader->compile();
+
     //obj1->model = new Model("./res/models/backpack/backpack.obj");
     obj2->model = new Model();
     obj2->model->GenCircle(1.0f);
