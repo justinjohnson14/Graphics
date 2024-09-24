@@ -51,5 +51,5 @@ void Object::draw(Camera* camera)
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(m_model));
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera->m_view));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera->m_projection));
-    model->draw();
+    model->Draw();
 }

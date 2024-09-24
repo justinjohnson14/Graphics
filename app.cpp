@@ -38,11 +38,11 @@ int main(void)
 
     init();
 
-    obj1 = new Object();
+    //obj1 = new Object();
     obj2 = new Object();
     camera = new Camera(window);
 
-    obj1->model = new Model("./res/models/backpack/backpack.obj");
+    //obj1->model = new Model("./res/models/backpack/backpack.obj");
     obj2->model = new Model(ShapeType::Circle);
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -61,7 +61,7 @@ double getCurrentTime()
 
 void update()
 {
-    obj1->update();
+    //obj1->update();
     obj2->update();
 }
 
@@ -77,7 +77,7 @@ void run()
 {
     double previous = getCurrentTime();
     double lag = 0.0;
-    obj1->m_force = glm::vec3(1.0f, 0.0f, 0.0f);
+    //obj1->m_force = glm::vec3(1.0f, 0.0f, 0.0f);
     while (window->running)
     {
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
@@ -94,7 +94,7 @@ void run()
         }
         //obj1->shader->use();
         //obj1->model->draw();
-        obj1->draw(camera);
+        //obj1->draw(camera);
         obj2->draw(camera);
 
         window->swapBuffers();

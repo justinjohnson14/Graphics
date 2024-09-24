@@ -15,10 +15,10 @@
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int>indicies, std::vector<Texture> textures) :
     vertices(vertices), indicies(indicies), textures(textures)
 {
-    Mesh::setupMesh();
+    Mesh::SetupMesh();
 }
 
-void Mesh::setupMesh()
+void Mesh::SetupMesh()
 {
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -44,7 +44,7 @@ void Mesh::setupMesh()
     glBindVertexArray(0);
 }
 
-void Mesh::draw()
+void Mesh::Draw()
 {
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, indicies.size(), GL_UNSIGNED_INT, 0);
@@ -56,13 +56,13 @@ Model::Model(const ShapeType& type)
 {
 }
 
-void Model::draw()
+void Model::Draw()
 {
     for(unsigned int i = 0; i < meshes.size(); i++)
-        meshes[i].draw();
+        meshes[i].Draw();
 }
 
-void Model::load(const std::string& file)
+void Model::Load(const std::string& file)
 {
     Assimp::Importer importer;
 
@@ -72,24 +72,24 @@ void Model::load(const std::string& file)
         LOG_ERROR("Error importing scene: {}", file);
 
 
-    processNode(scene->mRootNode, scene);
+    ProcessNode(scene->mRootNode, scene);
 }
 
-void Model::processNode(aiNode* node, const aiScene* scene)
+void Model::ProcessNode(aiNode* node, const aiScene* scene)
 {
     for(unsigned int i = 0; i < node->mNumMeshes; i++)
     {
         aiMesh *mesh = scene->mMeshes[node->mMeshes[i]];
-        meshes.push_back(processMesh(mesh, scene));
+        meshes.push_back(ProcessMesh(mesh, scene));
     }
 
     for(unsigned int i = 0; i < node->mNumChildren; i++)
     {
-        processNode(node->mChildren[i], scene);
+        ProcessNode(node->mChildren[i], scene);
     }
 }
 
-Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
+Mesh Model::ProcessMesh(aiMesh *mesh, const aiScene *scene)
 {
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indicies;
@@ -129,4 +129,9 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
     }
 
     return Mesh(vertices, indicies, textures);
+}
+
+void Model::GenCircle(float radius)
+{
+
 }

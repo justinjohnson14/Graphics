@@ -45,20 +45,22 @@ public:
     std::vector<Texture> textures;
 
     Mesh(std::vector<Vertex>, std::vector<unsigned int>, std::vector<Texture>);
-    void draw();
+    void Draw();
 private:
     unsigned int VAO, VBO, EBO;
-    void setupMesh();
+    void SetupMesh();
 };
 
 class Model{
 public:
-    Model(const std::string& file){load(file);}
+    Model(const std::string& file){Load(file);}
     Model(const ShapeType&);
-    void load(const std::string&);
-    void processNode(aiNode*,const aiScene*);
-    Mesh processMesh(aiMesh*, const aiScene*);
-    void draw();
+    void Load(const std::string&);
+    void ProcessNode(aiNode*,const aiScene*);
+    Mesh ProcessMesh(aiMesh*, const aiScene*);
+    void Draw();
+
+    void GenCircle(float);
 
     std::vector<Mesh> meshes;
     ShapeType m_shapeType;
