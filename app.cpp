@@ -78,7 +78,7 @@ void run()
 {
     double previous = getCurrentTime();
     double lag = 0.0;
-    //obj1->m_force = glm::vec3(1.0f, 0.0f, 0.0f);
+    obj2->m_force = glm::vec3(1.2f, 0.0f, 0.0f);
     while (window->running)
     {
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
