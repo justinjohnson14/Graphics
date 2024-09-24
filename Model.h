@@ -54,13 +54,14 @@ private:
 class Model{
 public:
     Model(const std::string& file){Load(file);}
-    Model();
+    Model(const ShapeType&);
     void Load(const std::string&);
     void ProcessNode(aiNode*,const aiScene*);
     Mesh ProcessMesh(aiMesh*, const aiScene*);
     void Draw();
 
     void GenCircle(float);
+    void GenRectangle(float, float);
 
     std::vector<Mesh> meshes;
     ShapeType m_shapeType;

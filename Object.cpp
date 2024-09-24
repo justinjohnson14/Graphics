@@ -19,6 +19,13 @@ Object::Object()
     //glUniform3fv(lightPos, 1, glm::value_ptr(m_lightPosition));
     //glUniform3fv(lightColor, 1, glm::value_ptr(m_lightColor));
     //glUniform3fv(objColor, 1, glm::value_ptr(m_objectColor));
+
+    m_model = glm::mat4(1.0f);
+    m_position = glm::vec3(0.0f, 0.0f, 0.0f);
+    m_velocity = glm::vec3(0.0f, 0.0f, 0.0f);
+    m_acceleration = glm::vec3(0.0f, 0.0f, 0.0f);
+    m_force = glm::vec3(0.0f, 0.0f, 0.0f);
+    m_mass = 1.0f;
 }
 
 Object::~Object()

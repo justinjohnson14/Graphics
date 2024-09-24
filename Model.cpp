@@ -43,6 +43,8 @@ void Mesh::SetupMesh()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, texCoords));
 
     glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
 void Mesh::Draw()
@@ -52,9 +54,34 @@ void Mesh::Draw()
         glBindVertexArray(0);
 }
 
-Model::Model()
+Model::Model(const ShapeType& type)
 {
-
+    switch (type) {
+    case Circle:
+        GenCircle(1.0f);
+        break;
+    case Ellipse:
+    case Square:
+        GenRectangle(1.0f, 1.0f);
+        break;
+    case Rectangle:
+        GenRectangle(1.0f, 3.0f);
+        break;
+    case Triangle:
+    case Rhombus:
+    case Trapezium:
+    case Pentagone:
+    case Hexagone:
+    case Octagon:
+    case Cylinder:
+    case Cone:
+    case Cube:
+    case RectangularPrism:
+    case Pyramid:
+    case Sphere:
+    default:
+        break;
+    }
 }
 
 void Model::Draw()
@@ -178,4 +205,24 @@ void Model::GenCircle(float radius)
     std::vector<Texture> tex;
     
     meshes.push_back(Mesh(vertices, indicies, tex));
+}
+
+void Model::GenRectangle(float width, float height)
+{
+    std::vector<Vertex> vertices;
+
+    Vertex v;
+    v.position = {0.0f-(height/2), 0.0f-(width/2),0.0f};
+    vertices.push_back(v);
+    v.position = {0.0f+(height/2), 0.0f-(width/2),0.0f};
+    vertices.push_back(v);
+    v.position = {0.0f+(height/2), 0.0f+(width/2),0.0f};
+    vertices.push_back(v);
+    v.position = {0.0f-(height/2), 0.0f+(width/2),0.0f};
+    vertices.push_back(v);
+    std::vector<unsigned int> indices = {0, 1, 2, 0, 2, 3};
+
+    std::vector<Texture> tex;
+
+    meshes.push_back(Mesh(vertices, indices, tex));
 }
