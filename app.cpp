@@ -43,7 +43,8 @@ int main(void)
     camera = new Camera(window);
 
     //obj1->model = new Model("./res/models/backpack/backpack.obj");
-    obj2->model = new Model(ShapeType::Circle);
+    obj2->model = new Model();
+    obj2->model->GenCircle(1.0f);
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 

@@ -6,6 +6,7 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
+#include <cmath>
 #include <cstddef>
 #include <glad/glad.h>
 #include <glm/ext/vector_float2.hpp>
@@ -51,9 +52,9 @@ void Mesh::Draw()
         glBindVertexArray(0);
 }
 
-Model::Model(const ShapeType& type)
-    :m_shapeType(type)
+Model::Model()
 {
+
 }
 
 void Model::Draw()
@@ -133,5 +134,48 @@ Mesh Model::ProcessMesh(aiMesh *mesh, const aiScene *scene)
 
 void Model::GenCircle(float radius)
 {
+    float angle = std::asinf(0.1 / (2*radius)) * 2;
+    angle = std::fminf(angle, M_PI - (M_PI * 0.95f));
 
+    const float steps = (M_PI*2) / angle;
+
+    int segmentCount = (int)std::ceilf(steps);
+    segmentCount = (segmentCount < 3) ? 3 : segmentCount;
+
+    const int vertexCount = 1 + segmentCount;
+    const int faceCount = segmentCount;
+    const int indexCount = faceCount*3;
+
+    std::vector<Vertex> vertices;
+    Vertex v0;
+    v0.position = glm::vec3(0.0f, 0.0f, 0.0f);
+    vertices.push_back(v0);
+
+    const float angleStep = (M_PI*2) / segmentCount;
+
+    for(int i = 0; i < segmentCount; ++i)
+    {
+        const float angle0 = angleStep*i;
+        const float x = std::cosf(angle0);
+        const float y = std::sinf(angle0);
+
+        const float pos_x = 0.0 + x * radius;
+        const float pos_y = 0.0 + y * radius;
+
+        Vertex vertex;
+        vertex.position = glm::vec3(pos_x, pos_y, 0.0f);
+        vertices.push_back(vertex);
+    }
+
+    std::vector<unsigned int> indicies;
+    for (int i = 0; i < segmentCount; i++)
+    {
+        indicies.push_back(0);
+        indicies.push_back(i+1);
+        indicies.push_back(1+((i + 1) % segmentCount));
+    }
+
+    std::vector<Texture> tex;
+    
+    meshes.push_back(Mesh(vertices, indicies, tex));
 }

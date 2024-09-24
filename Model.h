@@ -54,7 +54,7 @@ private:
 class Model{
 public:
     Model(const std::string& file){Load(file);}
-    Model(const ShapeType&);
+    Model();
     void Load(const std::string&);
     void ProcessNode(aiNode*,const aiScene*);
     Mesh ProcessMesh(aiMesh*, const aiScene*);
