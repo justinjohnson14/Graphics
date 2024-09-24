@@ -9,12 +9,14 @@ GameEngine::GameEngine()
     m_objects.push_back(new Object());
     m_camera = new Camera(m_window);
 
+    
     for(auto i : m_objects)
     {
         i->shader = new Shader("./res/shaders/vertex.glsl", "./res/shaders/fragment.glsl");
         i->shader->compile();
     }
 
+    //Test code
     m_objects[0]->model = new Model(ShapeType::Circle);
     m_objects[1]->model = new Model(ShapeType::Rectangle);
 
