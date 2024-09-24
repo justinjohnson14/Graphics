@@ -19,21 +19,7 @@ add_definitions(-DDEBUG)
 add_library(GameEngine)
 
 target_sources(GameEngine PUBLIC
-    app.cpp
-    Renderer.cpp
-    Memory.cpp
-    Model.cpp
-    Shader.cpp
-    Object.cpp
-    Window.cpp
-    Log.cpp
-    Camera.cpp
-    glad/src/glad.c
-)
-
-add_executable(app)
-target_sources(app PUBLIC
-    app.cpp
+    GameEngine.cpp
     Renderer.cpp
     Memory.cpp
     Model.cpp
@@ -46,7 +32,6 @@ target_sources(app PUBLIC
 )
 
 target_link_libraries(
-    app
     glad
     imgui
     glm
